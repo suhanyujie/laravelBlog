@@ -30,7 +30,7 @@
 #back-to-top:hover{ background-color:#6393E2; }
 
 </style>
-<base target="_blank"/>
+<base target="_self"/>
 <script>
 	//  1. Sidebar Position
 	var sidebar_left = false; // Set true or flase for positioning sidebar on left
