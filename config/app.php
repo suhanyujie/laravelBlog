@@ -154,6 +154,7 @@ return [
          * suhy
          */
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
     ],
 
@@ -205,6 +206,8 @@ return [
         'Form'      => Illuminate\Html\FormFacade::class,
         'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
         'UEditor'   => Stevenyangecho\UEditor\UEditorServiceProvider::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 
