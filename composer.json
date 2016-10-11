@@ -18,7 +18,8 @@
         "acabin/laravoole": "^0.1.9",
         "arcanedev/log-viewer": "~3.0",
         "hprose/hprose": "^2.0",
-        "tymon/jwt-auth": "0.5.*"
+        "tymon/jwt-auth": "0.5.*",
+        "dingo/api": "1.0.*@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

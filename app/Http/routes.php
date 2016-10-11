@@ -60,6 +60,16 @@ Route::post('auth/register','Auth\AuthController@postRegister');
 
 Route::get('auth/logout','Auth\AuthController@getLogout');
 
+// API 路由配置
+$api = app('Dingo\Api\Routing\Router');
+$api->version('v1', function ($api) {
+    $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
+
+        $api->post('user/login','AuthController@authenticate');
+        $api->get('articles','ArticleController@index');
+    });
+
+});
 
 
 
