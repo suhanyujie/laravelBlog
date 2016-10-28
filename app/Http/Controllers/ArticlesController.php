@@ -158,14 +158,12 @@ class ArticlesController extends Controller
         if(\Auth::check() == false){
             return redirect('/auth/login');
         }
-        $articles = Article::findOrFail($id)->update(['publish_date'=>time(),]);
+        // 更新标题信息到文章主表中
+        $articles = Article::findOrFail($id)->update(['publish_date'=>time(),'title'=>$request->title]);
         #$articles->update($request->all());
         // 更新到content表中
         $contentArr = ['article_id'=>$id,'content'=>$request->content,];
-        //dd($contentArr);
         $content = Content::where('article_id',$id)->update($contentArr);
-        //dd($content);
-        #$content->update($contentArr);
 
         return redirect('/articles/');
     }
@@ -223,7 +221,6 @@ class ArticlesController extends Controller
        
         return view('articles.search',compact('searchList'));
         //var_dump(rand(1000,9999));
-        //return '';
     }
     /**
      * 博客数据库备份
