@@ -50,9 +50,9 @@ class ArticlesController extends Controller
         }else{
             $dataArticles = unserialize($dataArticles);
         }
-        
+
         $data['articles'] = $dataArticles;
-        //var_dump($data);exit(); 
+        //var_dump($data);exit();
         // $articleArr[0]['relations']['content']['content']
 
         return view('articles.index')->with('data',$data);
@@ -167,7 +167,7 @@ class ArticlesController extends Controller
 
         return redirect('/articles/');
     }
-    // 全文分词搜索
+    // 全文分词搜索 1-1
     public function search(Request $request){
         //$keyword = '服务器';
         //$keywords = $requests->get('keywords');
@@ -179,13 +179,13 @@ class ArticlesController extends Controller
         // include('/home/tmp/tool/coreseek-3.2.14/csft-3.2.14/api/sphinxapi.php');
         $s = new \SphinxClient;
         $s->setServer("localhost", 9312);
-        $s->setArrayResult(true); 
+        $s->setArrayResult(true);
         // $s->setSelect();
         $s->setMatchMode(SPH_MATCH_ALL);
         $result = $searchList = array();
         if($keyword){
             $result = $s->query($keyword, 'test1');
-            // 获取检索到的文章id 
+            // 获取检索到的文章id
             $idArr = array();
             $data = $titleArr = array();
             if(isset($result['matches']) && is_array($result['matches'])){
@@ -193,7 +193,7 @@ class ArticlesController extends Controller
                     $idArr[] = $v['attrs']['article_id'];
                 }
                 $idStr = implode(',',$idArr);
-                // 查找文章 
+                // 查找文章
                 $data['articles'] = \DB::table('blog_articles')->whereRaw('id in ('.$idStr.')')->get();
                 $contentArr =  \DB::table('blog_content')->whereRaw('article_id in ('.$idStr.')')->get();
                 if($contentArr){
@@ -218,7 +218,7 @@ class ArticlesController extends Controller
             $searchList[0]['message'] = '请输入要查询的关键词~';
             return;
         }
-       
+
         return view('articles.search',compact('searchList'));
         //var_dump(rand(1000,9999));
     }
@@ -241,7 +241,7 @@ class ArticlesController extends Controller
     public function leaveWords(){
 
     }
-    
+
 
     /**
      * Remove the specified resource from storage.

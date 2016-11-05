@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Article;
 
+use App\Http\Controllers\ContentController;
 use Illuminate\Http\Request;
 
 
@@ -134,6 +135,7 @@ class AdminController extends Controller
         $post = \App\Article::find($id);
         $post->update(['is_del'=>1]);
         $post->delete();
+        ContentController::where('article_id',$id)->dalete();
         return ['code'=>1,'msg'=>'success'];
     }
 }

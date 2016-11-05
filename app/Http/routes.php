@@ -11,11 +11,8 @@
 |
 */
 Route::get('/test-sql', function() {
-
     //DB::enableQueryLog();
-
     //$articles = App\Article::create();
- 
     //return response()->json(DB::getQueryLog());
 });
 
@@ -47,7 +44,7 @@ Route::resource('/articles/message','\App\Http\Controllers\Article\LeaveMessageC
 //    return view('articles.messageOld');
 //});
 
-
+// 文章的新增编辑等等
 Route::resource('articles','ArticlesController');
 // 数据备份路由
 Route::get('/articles/backup','ArticlesController@backup');
@@ -64,7 +61,6 @@ Route::get('auth/logout','Auth\AuthController@getLogout');
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
-
         $api->post('user/login','AuthController@authenticate');
         $api->get('articles','ArticleController@index');
     });
