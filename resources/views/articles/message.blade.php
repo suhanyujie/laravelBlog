@@ -43,7 +43,6 @@
     <!--  读markdown时引入js End-->
     <script type="text/javascript">
         //  /plugin/editor.md/lib/
-
         $(function() {
             // markdown内容的显示
             var testEditormdView, testEditormdView2;
