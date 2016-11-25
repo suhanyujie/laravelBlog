@@ -9,7 +9,7 @@
 
     <div class="container" style="margin-bottom: 20px;">
         @include('articles.nav')
-        <h2>尚未实现,请耐心等待哦~  </h2>
+        <h2>快去下方试试留言吧~  </h2>
         <div class="row">
             {!! Form::open(['url' => '/articles/message','method'=>'post']) !!}
             <div class="form-group">
@@ -37,13 +37,9 @@
         <hr>
         <div class="row">
             <iframe id="iframepage" class="row" frameborder="0" width="100%" height="100%" scrolling=no onLoad="iFrameHeight()" src="/articles/message" frameborder="0"></iframe>
-            
-            
         </div>
         
     </div>
-
-
 
     <script type="text/javascript" src="http://icon.zol-img.com.cn/public/js/jquery-1.11.min.js"></script>
     {{--<script src="/plugin/editormd/editormd.min.js"></script>--}}

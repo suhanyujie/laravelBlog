@@ -79,15 +79,15 @@ class ArticlesController extends Controller
      */
     public function store(Requests\CreateArticleRequest $request)
     {
-        # var_dump($request->all()); exit();
-        # 接受post过来的数据
+        // 接受post过来的数据
         $this->validate($request,['title'=>'required','content'=>'required']);
         $input = $request->except('_token');
-        # 存入数据库
-        #$input['publish_date'] = time();
+        // 存入数据库
+        // $input['publish_date'] = time();
         $insertId = Article::create($input)->id;
+
         $contentInsert = array();
-        # 新创建的文章id
+        // 新创建的文章id
         $contentInsert['article_id'] = $insertId;
         $contentInsert['content'] = $input['content'];
         $res1 = Content::create($contentInsert);
@@ -125,7 +125,7 @@ class ArticlesController extends Controller
     {
         $data = Article::findOrFail($id);
         $data->content = Article::find($id)->hasOneContent->content;
-        #dd($data->created_at->diffForHumans());
+
         return view('articles.show2',compact('data'));
     }
 
