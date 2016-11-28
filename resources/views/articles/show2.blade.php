@@ -15,7 +15,7 @@
     }
 
 </style>
-<link rel="stylesheet" href="http://pandao.github.io/editor.md/examples/css/style.css" />
+{{--<link rel="stylesheet" href="http://pandao.github.io/editor.md/examples/css/style.css" />--}}
 <link rel="stylesheet" href="http://pandao.github.io/editor.md/css/editormd.preview.css" />
 <div class="container-fluid">
     <div class="row">
@@ -26,9 +26,11 @@
                         {{$data->title}}
                     </h1>
                 </div>
-                <article>
-                    <div class="content" id="main-content">
-                        {!! $data->content !!}
+                <article id="main">
+                    <div class="content" style="display:none;">
+                        <textarea id="main-content">
+                            {!! $data->content !!}
+                        </textarea>
                     </div>
                 </article>
             </div>
@@ -68,7 +70,9 @@
     $(function() {
         // markdown内容的显示
         var testEditormdView, testEditormdView2;
-        editormd.markdownToHTML("main-content", {
+
+        testEditormdView = editormd.markdownToHTML("main", {
+            markdown        : $('#main-content').html()+ "\r\n" ,// + $("#append-test").text(),
             htmlDecode      : "style,script,iframe",  // you can filter tags decode
             emoji           : true,
             taskList        : true,

@@ -83,7 +83,7 @@ class ArticlesController extends Controller
         $this->validate($request,['title'=>'required','content'=>'required']);
         $input = $request->except('_token');
         // 存入数据库
-        // $input['publish_date'] = time();
+        $input['publish_date'] = time();
         $insertId = Article::create($input)->id;
 
         $contentInsert = array();
