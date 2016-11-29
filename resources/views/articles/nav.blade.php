@@ -57,6 +57,7 @@
                     <li>
                         <a href="http://m.aoh.cc/1.html">laravel资源大全2</a>
                     </li>
+                    <li><a href="https://laravel-china.org/docs/5.3/frontend">laravel5.3中文文档</a></li>
                 </ul>
             </li>
             <li class="dropdown" >

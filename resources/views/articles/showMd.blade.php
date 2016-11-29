@@ -28,9 +28,7 @@
                 </div>
                 <article id="main">
                     <div class="content" style="display:none;">
-                        <textarea id="main-content">
-                            {!! $data->content !!}
-                        </textarea>
+                        <textarea id="main-content">{!! $data->content !!}</textarea>
                     </div>
                 </article>
             </div>
@@ -55,6 +53,7 @@
 
     @include('articles.footer')
 </div>
+@if($data->id > 127)
 <!--  读markdown时引入js Start-->
 <script src="/plugin/editor.md/lib/marked.min.js"></script>
 <script src="/plugin/editor.md/lib/prettify.min.js"></script>
@@ -83,4 +82,6 @@
     });
 
 </script>
+    @endif
+
 @stop

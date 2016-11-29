@@ -125,8 +125,10 @@ class ArticlesController extends Controller
     {
         $data = Article::findOrFail($id);
         $data->content = Article::find($id)->hasOneContent->content;
-
-        return view('articles.show2',compact('data'));
+        if($data->id > 127){
+            return view('articles.showMd',compact('data'));
+        }
+        return view('articles.showUeditor',compact('data'));
     }
 
     /**
