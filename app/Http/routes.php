@@ -73,5 +73,31 @@ $api->version('v1', function ($api) {
 Route::get('/', function () {
     return view('sites.index');
 });*/
-Route::get('/test1', 'ArticlesController@test1');
+Route::get('/test1', function(){
+    $arr1 = [[
+        'key1'=>'value1',
+        'key2'=>[
+            ['key2_1'=>'value2_1','price'=>'123',],
+            ['key2_2'=>'value2_2','price'=>'487',],
+        ],
+
+    ]];
+    $startTime = microtime(true);
+    $sum = 0;
+    for($i=0;$i<100000;$i++){
+//        collect($arr1)->flatMap(function($ele){
+//            return  $ele['key2'];
+//        })->pluck('price')->sum();
+        // 原生的foreach效率高了35.7倍
+        foreach($arr1 as $k=>$order){
+            foreach($order['key2'] as $v){
+                $sum += $v['price'];
+            }
+        }
+    }
+    $endTime = microtime(true);
+
+    return round(($endTime-$startTime),4);
+});
+
 Route::resource('/admin', '\App\Http\Controllers\Article\AdminController');
