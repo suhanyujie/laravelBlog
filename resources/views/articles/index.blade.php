@@ -149,6 +149,8 @@
 				<a href="https://github.com/52fhy/" class="label label-primary">飞鸿影的github</a>
 				<a href="//www.cnblogs.com/52fhy/" class="label label-primary">飞鸿影的cnblog</a>
 				<a href="//www.cnblogs.com/ishenghuo/" class="label label-primary">我的cnblog</a>
+				<a href="http://www.ruanwenwu.cn/" class="label label-primary">文武's blog</a>
+
     		</div>
     	</div>
 		

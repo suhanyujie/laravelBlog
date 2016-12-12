@@ -62,7 +62,8 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
         $api->post('user/login','AuthController@authenticate');
-        $api->get('articles','ArticleController@index');
+        $api->get('/test/articles','ArticleController@index');
+
     });
 
 });
@@ -73,9 +74,10 @@ $api->version('v1', function ($api) {
 Route::get('/', function () {
     return view('sites.index');
 });*/
-Route::get('/test1', function(){
+Route::get('/test/test1', function(){
 
     return view('test.wildDog');
 });
+
 
 Route::resource('/admin', '\App\Http\Controllers\Article\AdminController');

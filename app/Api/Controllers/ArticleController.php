@@ -13,7 +13,7 @@ use App\Article;
 class ArticleController extends BaseController
 {
     public function index(){
-        $articles = Article::all();
+        $articles = Article::latest()->take(10)->get();
 
         return $this->collection($articles, new ArticleTransformer());
     }
