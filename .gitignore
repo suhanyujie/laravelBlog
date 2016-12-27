@@ -4,5 +4,4 @@
 /public/test/
 Homestead.yaml
 Homestead.json
-.env
-
+/.env
