@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/monokai_sublime.min.css">
 <style>
-.content-wrap { background:url(//i2.buimg.com/141169079dbd0294.jpg) ;}
+.content-wrap { background: rgba(217, 238, 214, 0.78);}
 .navbar{ margin-bottom:0;}
 /* 鼠标选中颜色 */
 ::-moz-selection{background:#93C; color:#FCF;} 

@@ -42,7 +42,7 @@ class ArticlesController extends Controller
                 'port' => 6379,
         ));
         $dataArticles = $redis->get($cacheKey);
-        if(!$dataArticles  ){
+        if( !$dataArticles  ){
             //$dataArticles = \App\Article::latest()->take($pageNum)->with('content')->get()->toArray();
             $dataArticles = App\Article::latest()->with('content')->paginate($pageNum)->toArray();
             //var_dump($dataArticles);exit();
@@ -145,7 +145,10 @@ class ArticlesController extends Controller
     	$articles = Article::findOrFail($id);
         $articles->content = Article::find($id)->hasOneContent->content;
     	#dd($articles);
-        return view('articles.edit',compact('articles'));
+        if($id > 127){
+            return view('articles.edit',compact('articles'));
+        }
+        return view('articles.editUeditor',compact('articles'));
     }
 
     /**
