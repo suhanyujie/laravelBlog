@@ -16,7 +16,7 @@
 
 </style>
 {{--<link rel="stylesheet" href="http://pandao.github.io/editor.md/examples/css/style.css" />--}}
-<link rel="stylesheet" href="http://pandao.github.io/editor.md/css/editormd.preview.css" />
+<link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.preview.css" />
 <div class="container-fluid">
     <div class="row">
         @include('articles.nav')

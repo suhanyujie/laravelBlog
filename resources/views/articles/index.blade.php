@@ -18,8 +18,8 @@
 .content-wrap { background: rgba(217, 238, 214, 0.78);}
 .navbar{ margin-bottom:0;}
 /* 鼠标选中颜色 */
-::-moz-selection{background:#93C; color:#FCF;} 
-::selection {background:#93C; color:#FCF;} 
+::-moz-selection{background:#cc8e9b; color:#FCF;}
+::selection {background: #cc8e9b; color:#FCF;}
 .content-wrap .main-content article,.content-wrap .main-content .little-label{ background:#fff;border:1px solid #ccc; margin-top:20px; padding:10px; border-radius:10px; opacity:0.7; } 
 
 .content-wrap .main-content article .post-content{ margin:10px auto; }
@@ -93,14 +93,15 @@
                         </article>
 					@endforeach
 					
+
+
 					<nav class="pagination" role="navigation">
-						@if(isset($data['articles']['prev_page_url']))
-							<a class="older-posts" href="{{$data['articles']['prev_page_url']}}"><i class="fa">上一页</i></a>
-						@endif
-    					@if(isset($data['articles']['next_page_url']))
-							<a class="older-posts" href="{{$data['articles']['next_page_url']}}"><i class="fa">下一页</i></a>
-						@endif
+                        <ul class="pagination">
+                            {!! $data['articles']['pageHtml'] !!}
+                        </ul>
 					</nav>
+
+
 				</main>
 
 				<aside class="col-md-4 sidebar">

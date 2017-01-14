@@ -13,17 +13,26 @@ use Carbon\Carbon;
 use App\Model;
 use App;
 
+use MyBlog\Services\PageService;
 use Predis\Client;
 use Illuminate\Support\Facades\DB;
 
 class ArticlesController extends Controller
 {
+    protected $page;
+
+    public function __construct(PageService $pageObj)
+    {
+        $this->page = $pageObj;
+
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //$a = new ArticleRepository(new \App\Article);
         //var_dump($a->getLatestArticles());exit();
@@ -52,6 +61,7 @@ class ArticlesController extends Controller
         }
 
         $data['articles'] = $dataArticles;
+        $data['articles']['pageHtml'] = $this->page->getPageHtml($dataArticles,$request);
         //var_dump($data);exit();
         // $articleArr[0]['relations']['content']['content']
 

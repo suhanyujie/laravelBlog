@@ -60,8 +60,8 @@
     });
 </script>
 <script type="text/javascript" src="http://icon.zol-img.com.cn/public/js/jquery-1.11.min.js"></script>
-<script src="http://zwiki.zol.com.cn/js/editor.md/lib/marked.min.js"></script>
-<script src="http://zwiki.zol.com.cn/js/editor.md/editormd.js"></script>
+<script src="//laravel.suhanyu.top/plugin/editor.md/lib/marked.min.js"></script>
+<script src="//laravel.suhanyu.top/plugin/editor.md/editormd.js"></script>
 <script type="text/javascript">
     function iFrameHeight() {
         var ifm= document.getElementById("iframepage");
