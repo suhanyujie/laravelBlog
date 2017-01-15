@@ -9,7 +9,8 @@
 @stop
 
 @section('content')
-
+    <link rel="stylesheet" href="http://laravel.suhanyu.top/my_style/editor/css/jquery.tagsinput.min.css" />
+    <script src="//laravel.suhanyu.top/my_style/editor/js/jquery.tagsinput.min.js"></script>
     <div class="container">
         @include('articles.nav')
         <h1> 编辑文章 </h1>
@@ -22,7 +23,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('tags') !!}
-                {!! Form::text('article_tags',null,['id'=>'article_tags','class'=>'form-control','value'=>'php,laravel,tags',]) !!}
+                {!! Form::text('article_tags',$articles->articleTags,['id'=>'article_tags','class'=>'form-control','value'=>'php,laravel,tags',]) !!}
             </div>
             <!-- 实例化编辑器 -->
             <div class="form-group" style="width:100%;">
@@ -40,10 +41,13 @@
 			@include('errors.articleError')
 
         </div>
-        <script type="text/javascript" src="http://icon.zol-img.com.cn/public/js/jquery-1.11.min.js"></script>
         <script src="//laravel.suhanyu.top/plugin/editor.md/lib/marked.min.js"></script>
         <script src="//laravel.suhanyu.top/plugin/editor.md/editormd.js"></script>
         <script>
+            // 文章标签的js
+            $('#article_tags').tagsInput({
+                autocomplete:{selectFirst:true,width:'100px',autoFill:true}
+            });
             /*初始化编辑器*/
             var zEditor;
             $(function() {

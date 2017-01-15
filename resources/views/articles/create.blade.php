@@ -10,14 +10,13 @@
     <div class="row" style="margin-top:50px;">
         {!! Form::open(['url'=>'/articles']) !!}
 
-        	{{--@include('articles.form',['initContent'=>'',])--}}
         <div class="form-group">
             {!! Form::label('title') !!}
             {!! Form::text('title',null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('tags') !!}
-            {!! Form::text('article_tags',null,['id'=>'article_tags','class'=>'form-control','value'=>'php,laravel,tags',]) !!}
+            {!! Form::text('article_tags','php,laravel',['id'=>'article_tags','class'=>'form-control','value'=>'php,laravel,tags',]) !!}
         </div>
         <!-- 实例化编辑器 -->
         <div class="form-group" style="width:100%;">
@@ -59,7 +58,6 @@
         autocomplete:{selectFirst:true,width:'100px',autoFill:true}
     });
 </script>
-<script type="text/javascript" src="http://icon.zol-img.com.cn/public/js/jquery-1.11.min.js"></script>
 <script src="//laravel.suhanyu.top/plugin/editor.md/lib/marked.min.js"></script>
 <script src="//laravel.suhanyu.top/plugin/editor.md/editormd.js"></script>
 <script type="text/javascript">

@@ -101,27 +101,24 @@ class ArticlesController extends Controller
         $contentInsert['article_id'] = $insertId;
         $contentInsert['content'] = $input['content'];
         $res1 = Content::create($contentInsert);
-        # tags的存储  // 功能正在开发中..
-        if(isset($input['article_tags']) && false){
+        // tags的存储  // 功能正在开发中..
+        if(isset($input['article_tags'])){
             $addTagsArr = explode(',',$input['article_tags']);
             $tags = $relateTags = [];
             if($addTagsArr){
                 foreach($addTagsArr as $k=>$v){
-                    $tags = ['tags_name'=>$v];
-                    $tagInsertId = DB::table('blog_tags')->insert(array($tags));
-
+                    $tags = ['tag_name'=>$v];
+                    $tagInsertId = Model\Article\Tags::create($tags)->id;
                     $relateTags = ['article_id'=>$insertId,'tag_id'=>$tagInsertId,];
-                    DB::table('blog_relate_tags')->insert(array($relateTags));
+                    Model\Article\RelateTags::create($relateTags);
                 }
             }
         }
-        #dd($res1);
-        #Article::create($contentInsert);
         $redis = new \Predis\Client();
         $curPage = 1;
         $cacheKey = 'laravel:articles:index:page:'.$curPage;
         $redis->set($cacheKey,'');
-        #重定向
+        // 重定向
         return redirect('/articles');
     }
 
@@ -154,6 +151,12 @@ class ArticlesController extends Controller
         }
     	$articles = Article::findOrFail($id);
         $articles->content = Article::find($id)->hasOneContent->content;
+        $tags = Model\Article\RelateTags::latest()->where('article_id',123)->with('tagInfo')->get();
+        $articleTags = array();
+        foreach($tags as $k=>$row){
+            $articleTags[] = $row->tagInfo->tag_name;
+        }
+        $articles->articleTags = implode(',', $articleTags);
     	#dd($articles);
         if($id > 127){
             return view('articles.edit',compact('articles'));
