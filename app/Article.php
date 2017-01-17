@@ -41,10 +41,16 @@ class Article extends Model
 	}
 	
 	/**
-	 * 多个文章 并获取content
+	 * 多个文章 并获取content 使用with的方式
 	 */
 	public function content(){
 	    return $this->belongsTo('App\Content','id','article_id');
 	}
+	/**
+	 * 获取文章的关联标签,使用with方式
+	 */
+    public function tags(){
+        return $this->hasMany('App\Model\Article\RelateTags','article_id','id');
+    }
 
 }// 类结束符

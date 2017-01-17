@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use App\Model;
 use App;
 
+use MyBlog\Services\ArticleServices;
 use MyBlog\Services\PageService;
 use Predis\Client;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +25,6 @@ class ArticlesController extends Controller
     public function __construct(PageService $pageObj)
     {
         $this->page = $pageObj;
-
     }
 
     /**
@@ -51,11 +51,14 @@ class ArticlesController extends Controller
                 'port' => 6379,
         ));
         $dataArticles = $redis->get($cacheKey);
-        if( !$dataArticles  ){
+        if( !$dataArticles ){
             //$dataArticles = \App\Article::latest()->take($pageNum)->with('content')->get()->toArray();
-            $dataArticles = App\Article::latest()->with('content')->paginate($pageNum)->toArray();
+            $dataArticles = App\Article::latest()->with(['content','tags'])->paginate($pageNum);
+            $dealTagObj = new ArticleServices();
+            $dealTagObj->dealTags($dataArticles,new Model\Article\Tags());
+            $dataArticles = $dataArticles->toArray();
             //var_dump($dataArticles);exit();
-            $redis->setex($cacheKey,3600*12,serialize($dataArticles));
+            $redis->setex($cacheKey,3600*1,serialize($dataArticles));
         }else{
             $dataArticles = unserialize($dataArticles);
         }
