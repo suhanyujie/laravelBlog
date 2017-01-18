@@ -23,11 +23,8 @@
                     <li>
                         <a href="http://tool.oschina.net/regex">在线正则</a>
                     </li>
-                    <li>
-                        <a href="https://www.debuggex.com/">在线正则2</a> 
-                    </li>
-
-
+                    <li><a href="https://www.debuggex.com/">在线正则2</a></li>
+                    <li><a href="http://tool.lu/hexconvert/">进制转换</a></li>
                 </ul>
             </li>
             <li class="dropdown" >
