@@ -104,7 +104,7 @@ class ArticlesController extends Controller
         $contentInsert['article_id'] = $insertId;
         $contentInsert['content'] = $input['content'];
         $res1 = Content::create($contentInsert);
-        // tags的存储  // 功能正在开发中..
+        // tags的存储
         if(isset($input['article_tags'])){
             $addTagsArr = explode(',',$input['article_tags']);
             $tags = $relateTags = [];
@@ -182,6 +182,8 @@ class ArticlesController extends Controller
         // 更新标题信息到文章主表中
         $articles = Article::findOrFail($id)->update(['publish_date'=>time(),'title'=>$request->title]);
         #$articles->update($request->all());
+        // 更新时,更新tag的数据  开发中... 20170204
+
         // 更新到content表中
         $contentArr = ['article_id'=>$id,'content'=>$request->content,];
         $content = Content::where('article_id',$id)->update($contentArr);
