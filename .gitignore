@@ -1,6 +1,7 @@
 /vendor
 /node_modules
 /storage/debugbar
+/storage/logs
 /public/test/
 Homestead.yaml
 Homestead.json
