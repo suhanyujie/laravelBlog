@@ -31,6 +31,7 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 
 /**
  * 自己引入文件 suhy
+ * 相对于public下的入口文件而言的路径
  */
 require __DIR__.'/../app/Libs/sphinxapi.php';
 
