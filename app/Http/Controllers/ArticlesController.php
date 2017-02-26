@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 use MyBlog\Repositories\ArticleRepository;
 
 use App\Article;
@@ -44,25 +45,20 @@ class ArticlesController extends Controller
         $data['userInfo'] = $userInfo;
         $dataArticles = array();
         $curPage = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
-
         $cacheKey = 'laravel:articles:index:page:'.$curPage;
-        $redis = new \Predis\Client(array(
-                'host' => '127.0.0.1',
-                'port' => 6379,
-        ));
-        $dataArticles = $redis->get($cacheKey);
-        if( !$dataArticles ){
+        if( !Cache::has($cacheKey) ){
             //$dataArticles = \App\Article::latest()->take($pageNum)->with('content')->get()->toArray();
             $dataArticles = App\Article::latest()->with(['content','tags'])->paginate($pageNum);
             $dealTagObj = new ArticleServices();
             $dealTagObj->dealTags($dataArticles,new Model\Article\Tags());
             $dataArticles = $dataArticles->toArray();
             //var_dump($dataArticles);exit();
-            $redis->setex($cacheKey,3600*1,serialize($dataArticles));
-        }else{
-            $dataArticles = unserialize($dataArticles);
-        }
+            //$redis->setex($cacheKey,3600*1,serialize($dataArticles));
 
+            Cache::put($cacheKey,$dataArticles,3600);
+        }else{
+            $dataArticles = Cache::get($cacheKey);
+        }
         $data['articles'] = $dataArticles;
         $data['articles']['pageHtml'] = $this->page->getPageHtml($dataArticles,$request);
         //var_dump($data);exit();
