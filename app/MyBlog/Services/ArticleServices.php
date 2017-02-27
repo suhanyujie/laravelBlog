@@ -15,7 +15,7 @@ class ArticleServices extends BaseServices
 {
 
     /**
-     * 处理文章的相关标签
+     * @desc 处理文章的相关标签
      */
     public function dealTags($dataArr,Tags $tags){
         $tagIds = $tmpArr = [];
@@ -27,12 +27,14 @@ class ArticleServices extends BaseServices
     }
 
     /**
-     * 获取tag的name等信息
+     * @desc 获取tag的name等信息
      */
     public function getTagInfo($itemObj){
         $tagModel = new Tags();
         $ids = $itemObj->tagIds->toArray();
         $itemObj->tagInfo = $tagModel->whereIn('id',$ids)->get();
     }
+
+
 
 }// end of class

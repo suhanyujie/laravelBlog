@@ -52,9 +52,6 @@ class ArticlesController extends Controller
             $dealTagObj = new ArticleServices();
             $dealTagObj->dealTags($dataArticles,new Model\Article\Tags());
             $dataArticles = $dataArticles->toArray();
-            //var_dump($dataArticles);exit();
-            //$redis->setex($cacheKey,3600*1,serialize($dataArticles));
-
             Cache::put($cacheKey,$dataArticles,3600);
         }else{
             $dataArticles = Cache::get($cacheKey);
@@ -113,10 +110,9 @@ class ArticlesController extends Controller
                 }
             }
         }
-        $redis = new \Predis\Client();
         $curPage = 1;
         $cacheKey = 'laravel:articles:index:page:'.$curPage;
-        $redis->set($cacheKey,'');
+        Cache::forget($cacheKey);
         // 重定向
         return redirect('/articles');
     }
