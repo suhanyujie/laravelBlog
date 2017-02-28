@@ -22,10 +22,12 @@ use Illuminate\Support\Facades\DB;
 class ArticlesController extends Controller
 {
     protected $page;
+    protected $articleService;
 
     public function __construct(PageService $pageObj)
     {
         $this->page = $pageObj;
+        $this->articleService = new ArticleServices();
     }
 
     /**
@@ -182,6 +184,20 @@ class ArticlesController extends Controller
 
         return redirect('/articles/');
     }
+
+    /**
+     * @desc:
+     * @date:17/2/27
+     * @author:Samuel Su(suhanyu)
+     */
+    /**
+     * 功能:
+     */
+    public function tagList(Request $request, $id) {
+        $res = $this->articleService->getListByTag($id);
+        dd($res);
+    }
+
     // 全文分词搜索 1-1
     public function search(Request $request){
         //$keyword = '服务器';

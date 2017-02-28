@@ -14,6 +14,15 @@ class Tags extends Model
     ];
 
 
+    /**
+     * @desc:根据标签id获取关联的文章id
+     * @author:Samuel Su(suhanyu)
+     * @date:17/2/27
+     */
+    public function getRelateInfoByTagId() {
+        return $this->hasMany('App\Model\Article\RelateTags','tag_id','id');
+    }
+
 
 
 }// end of class

@@ -20,4 +20,6 @@ class RelateTags extends Model
     }
 
 
+
+
 }// end of class
