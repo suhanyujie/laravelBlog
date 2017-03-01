@@ -44,10 +44,11 @@ class ArticleServices extends BaseServices
      * @date:17/2/27
      */
     public function getListByTag($id) {
+        if(!$id)return [];
         $tagModel = new Tags();
-        $res = $tagModel->find($id)->getRelateInfoByTagId()->get();
-        $res = $res->pluck('article_id');
-        $res = $this->getArticleInfoByArticleIds($res);
+        $res = $tagModel->findOrFail($id)->getRelateInfoByTagId()->get();
+        $articleIdArr = $res->pluck('article_id');
+        $res = $this->getArticleInfoByArticleIds($articleIdArr);
         return $res;
     }
     
@@ -57,11 +58,14 @@ class ArticleServices extends BaseServices
      * @date:17/2/28
      */
     public function getArticleInfoByArticleIds($articleIdArr) {
+        if(!$articleIdArr)return [];
         $articleIdArr = $articleIdArr->toArray();
         $articleInfo = DB::table('blog_articles')->whereRaw('id in ('.implode(',',$articleIdArr).')')->get();
         $contentArr = $this->getContentByArticleIds($articleIdArr);
         foreach($articleInfo as $k=>$v){
-            $v->content = $contentArr[$v->id];
+            $articleInfo[$k] = (array)$articleInfo[$k];
+            $v = (array)$v;
+            $articleInfo[$k]['content'] = $contentArr[$v['id']];
         }
         return $articleInfo;
     }

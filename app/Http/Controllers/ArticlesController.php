@@ -194,8 +194,9 @@ class ArticlesController extends Controller
      * 功能:
      */
     public function tagList(Request $request, $id) {
-        $res = $this->articleService->getListByTag($id);
-        dd($res);
+        $dataList = $this->articleService->getListByTag($id);
+
+        return view('articles.list')->with('dataList',$dataList);
     }
 
     // 全文分词搜索 1-1
