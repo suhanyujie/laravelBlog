@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('tags') !!}
-            {!! Form::text('article_tags','php,laravel',['id'=>'article_tags','class'=>'form-control','value'=>'php,laravel,tags',]) !!}
+            {!! Form::text('article_tags','', ['id'=>'article_tags','class'=>'form-control','value'=>'php,laravel,tags',]) !!}
         </div>
         <!-- 实例化编辑器 -->
         <div class="form-group" style="width:100%;">

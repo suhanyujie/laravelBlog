@@ -106,7 +106,15 @@ class ArticlesController extends Controller
             if($addTagsArr){
                 foreach($addTagsArr as $k=>$v){
                     $tags = ['tag_name'=>$v];
-                    $tagInsertId = Model\Article\Tags::create($tags)->id;
+                    $tagExist = Model\Article\Tags::where('tag_name',$v);
+
+                    dd($tagExist);
+                    if( $tagExist ){
+//                        $tagInsertId = $tagExist
+                    } else {
+                        $tagInsertId = Model\Article\Tags::create($tags)->id;
+                    }
+
                     $relateTags = ['article_id'=>$insertId,'tag_id'=>$tagInsertId,];
                     Model\Article\RelateTags::create($relateTags);
                 }
@@ -173,13 +181,18 @@ class ArticlesController extends Controller
         if(\Auth::check() == false){
             return redirect('/auth/login');
         }
+        $input = $request->except('_token');
         // 更新标题信息到文章主表中
         $articles = Article::findOrFail($id)->update(['publish_date'=>time(),'title'=>$request->title]);
-        #$articles->update($request->all());
         // 更新时,更新tag的数据  开发中... 20170204
-
+        if(isset($input['article_tags'])){
+            $addTagsArr = explode(',',$input['article_tags']);
+            $tags = $relateTags = [];
+            // 1.检查编辑后的每个标签是否已经存在,如果不存在,就行标签新增
+            // 2.删除这个文章的所有标签关联,重新进行标签关联表的insert操作
+        }
         // 更新到content表中
-        $contentArr = ['article_id'=>$id,'content'=>$request->content,];
+        $contentArr = ['article_id'=>$id, 'content'=>$input['content'] ];
         $content = Content::where('article_id',$id)->update($contentArr);
 
         return redirect('/articles/');

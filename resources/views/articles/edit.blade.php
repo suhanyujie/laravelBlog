@@ -25,7 +25,7 @@
                 {!! Form::label('tags') !!}
                 {!! Form::text('article_tags',$articles->articleTags,['id'=>'article_tags','class'=>'form-control','value'=>'php,laravel,tags',]) !!}
             </div>
-            <!-- 实例化编辑器 -->
+            <!-- 实例化编辑器  -->
             <div class="form-group" style="width:100%;">
                 {!! Form::label('content','Content:') !!}
                 <div id="text">
