@@ -38,7 +38,6 @@ class ArticlesController extends Controller
     public function index(Request $request)
     {
         //$a = new ArticleRepository(new \App\Article);
-        //var_dump($a->getLatestArticles());exit();
         // 一页多少文章
         $pageNum = 10;
         $userInfo = \Auth::user();
@@ -48,7 +47,7 @@ class ArticlesController extends Controller
         $dataArticles = array();
         $curPage = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
         $cacheKey = 'laravel:articles:index:page:'.$curPage;
-        if( !Cache::has($cacheKey) ){
+        if( !Cache::has($cacheKey) || ($request->refresh==1) ){
             //$dataArticles = \App\Article::latest()->take($pageNum)->with('content')->get()->toArray();
             $dataArticles = App\Article::latest()->with(['content','tags'])->paginate($pageNum);
             $dealTagObj = new ArticleServices();
@@ -61,7 +60,6 @@ class ArticlesController extends Controller
         $data['articles'] = $dataArticles;
         $data['articles']['pageHtml'] = $this->page->getPageHtml($dataArticles,$request);
         //var_dump($data);exit();
-        // $articleArr[0]['relations']['content']['content']
 
         return view('articles.index')->with('data',$data);
     }
@@ -92,6 +90,10 @@ class ArticlesController extends Controller
         $input = $request->except('_token');
         // 存入数据库
         $input['publish_date'] = time();
+        // 去重,针对重复刷新,可以发布多次一样的文章的问题
+        if(Article::where('title',$input['title'])->get()->count() > 0){
+            exit('<h1>文章已经发布过了!</h1>');
+        }
         $insertId = Article::create($input)->id;
 
         $contentInsert = array();
@@ -106,15 +108,12 @@ class ArticlesController extends Controller
             if($addTagsArr){
                 foreach($addTagsArr as $k=>$v){
                     $tags = ['tag_name'=>$v];
-                    $tagExist = Model\Article\Tags::where('tag_name',$v);
-
-                    dd($tagExist);
-                    if( $tagExist ){
-//                        $tagInsertId = $tagExist
+                    $tagExist = Model\Article\Tags::where('tag_name',$v)->get();
+                    if( $tagExist->count() > 0 ){
+//                      $tagInsertId = $tagExist;
                     } else {
                         $tagInsertId = Model\Article\Tags::create($tags)->id;
                     }
-
                     $relateTags = ['article_id'=>$insertId,'tag_id'=>$tagInsertId,];
                     Model\Article\RelateTags::create($relateTags);
                 }
