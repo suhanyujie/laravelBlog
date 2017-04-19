@@ -95,7 +95,6 @@ class ArticlesController extends Controller
             exit('<h1>文章已经发布过了!</h1>');
         }
         $insertId = Article::create($input)->id;
-
         $contentInsert = array();
         // 新创建的文章id
         $contentInsert['article_id'] = $insertId;
@@ -155,7 +154,7 @@ class ArticlesController extends Controller
         }
     	$articles = Article::findOrFail($id);
         $articles->content = Article::find($id)->hasOneContent->content;
-        $tags = Model\Article\RelateTags::latest()->where('article_id',123)->with('tagInfo')->get();
+        $tags = Model\Article\RelateTags::latest()->where('article_id', $id)->with('tagInfo')->get();
         $articleTags = array();
         foreach($tags as $k=>$row){
             $articleTags[] = $row->tagInfo->tag_name;
@@ -187,6 +186,7 @@ class ArticlesController extends Controller
         if(isset($input['article_tags'])){
             $addTagsArr = explode(',',$input['article_tags']);
             $tags = $relateTags = [];
+            $this->articleService->dealTag($addTagsArr, $id);
             // 1.检查编辑后的每个标签是否已经存在,如果不存在,就行标签新增
             // 2.删除这个文章的所有标签关联,重新进行标签关联表的insert操作
         }

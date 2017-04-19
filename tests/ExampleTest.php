@@ -4,6 +4,8 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+use MyBlog\Repositories\Rtag;
+
 class ExampleTest extends TestCase
 {
     /**
@@ -11,9 +13,22 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicExample()
+//    public function testBasicExample()
+//    {
+//        $this->visit('/')
+//             ->see('Laravel');
+//    }
+
+    public function checkTagFind()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+//        $rTag = new Rtag();
+//        $res = $rTag->checkTagExists();
+//        echo $res;
+        $this->assertTrue(true);
     }
+
+
+
+
+
 }

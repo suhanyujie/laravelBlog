@@ -85,6 +85,28 @@ class ArticleServices extends BaseServices
         return $tmpArr;
     }
 
+    /**
+     * @desc: 更新时,处理标签的逻辑
+     * @author:Samuel Su(suhanyu)
+     * @date:17/4/2
+     * @param String $param
+     * @return Array
+     */
+    public function dealTag($tagArr, $docId) {
+        foreach($tagArr as $k=>$row){
+            // 首先,标签需要存在标签库中,如果不存在,则插入,并进行文章关联
+            $res = Tags::where('tag_name','1234')->get();
+            dd($res);
+            if(1){
+
+            }
+            // 如果存在,那么继续接下来的处理
+
+            // 如果这个文章已经关联了这个标签,那么继续下一次循环,不错处理
+            // 如果没有的话,则需要进行关联
+        }
+    }
+
 
 
 }// end of class
