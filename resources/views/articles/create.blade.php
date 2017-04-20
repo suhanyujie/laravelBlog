@@ -3,8 +3,8 @@
 {{--@include('UEditor::head')--}}
 <link rel="stylesheet" href="http://laravel.suhanyu.top/my_style/editor/css/jquery.tagsinput.min.css" />
 <script src="http://laravel.suhanyu.top/my_style/editor/js/jquery.tagsinput.min.js"></script>
-<link rel="stylesheet" href="https://pandao.github.io/editor.md/lib/codemirror/codemirror.min.css" />
-<link rel="stylesheet" href="https://pandao.github.io/editor.md/css/editormd.min.css" />
+{{--<link rel="stylesheet" href="https://pandao.github.io/editor.md/lib/codemirror/codemirror.min.css" />--}}
+<link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.min.css" />
 <div class="container">
     <h1> 撰写新文章1 </h1>
     <div class="row" style="margin-top:50px;">
