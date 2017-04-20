@@ -181,14 +181,12 @@ class ArticlesController extends Controller
         }
         $input = $request->except('_token');
         // 更新标题信息到文章主表中
-        $articles = Article::findOrFail($id)->update(['publish_date'=>time(),'title'=>$request->title]);
+        // $articles = Article::findOrFail($id)->update(['publish_date'=>time(),'title'=>$request->title]);
         // 更新时,更新tag的数据  开发中... 20170204
         if(isset($input['article_tags'])){
             $addTagsArr = explode(',',$input['article_tags']);
             $tags = $relateTags = [];
             $this->articleService->dealTag($addTagsArr, $id);
-            // 1.检查编辑后的每个标签是否已经存在,如果不存在,就行标签新增
-            // 2.删除这个文章的所有标签关联,重新进行标签关联表的insert操作
         }
         // 更新到content表中
         $contentArr = ['article_id'=>$id, 'content'=>$input['content'] ];

@@ -10,8 +10,8 @@ namespace MyBlog\Services;
 
 
 use App\Article;
+use App\Model\Article\RelateTags;
 use App\Model\Article\Tags;
-use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 
 class ArticleServices extends BaseServices
@@ -93,17 +93,39 @@ class ArticleServices extends BaseServices
      * @return Array
      */
     public function dealTag($tagArr, $docId) {
-        foreach($tagArr as $k=>$row){
-            // 首先,标签需要存在标签库中,如果不存在,则插入,并进行文章关联
-            $res = Tags::where('tag_name','1234')->get();
-            dd($res);
-            if(1){
-
+        // 先取出这个文章的关联标签,和更新后的标签对比
+        $relateTags = RelateTags::where('article_id', $docId)->with('tagInfo')->get();
+        $oldTagArr = [];
+        $relateTags->map(function($item, $key)use(&$oldTagArr){
+            $oldTagArr[$item->tagInfo->id] = $item->tagInfo->tag_name;
+        });
+        $oldTagArrFlip = array_flip($oldTagArr);
+        // 求同存异
+        // 在旧的标签中 不存在,就要(新增标签|新增关联)
+        $newTags = array_diff($tagArr, $oldTagArr);
+        // 在更新后的标签中不存在的,旧标签群中有的,则需要删除
+        $toDeleteTags = array_diff($oldTagArr, $tagArr);
+        if($newTags){
+            foreach($newTags as $k=>$row){
+                $res = Tags::where('tag_name',$row)->get();
+                $res = $res->first();
+                if( $res->count() > 0 ){
+                    $tagInsertId = $oldTagArrFlip[$row];
+                    if(!$tagInsertId)throw new \ErrorException('there is something error--'.__CLASS__);
+                }else{
+                    $tags = ['tag_name'=>$row];
+                    $tagInsertId = Tags::create($tags)->id;
+                }
+                // 标签关联
+                $relateTags = ['article_id'=>$docId,'tag_id'=>$tagInsertId,];
+                RelateTags::create($relateTags);
             }
-            // 如果存在,那么继续接下来的处理
-
-            // 如果这个文章已经关联了这个标签,那么继续下一次循环,不错处理
-            // 如果没有的话,则需要进行关联
+        }
+        if($toDeleteTags){
+            foreach($toDeleteTags  as $k=>$row){
+                if(!isset($oldTagArrFlip[$row]))throw new \ErrorException('there is something error--'.__CLASS__);
+                RelateTags::where('article_id', $docId)->where('tag_id', $oldTagArrFlip[$row])->delete();
+            }
         }
     }
 
