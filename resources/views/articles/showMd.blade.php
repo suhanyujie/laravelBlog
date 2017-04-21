@@ -15,8 +15,7 @@
     }
 
 </style>
-{{--<link rel="stylesheet" href="http://pandao.github.io/editor.md/examples/css/style.css" />--}}
-<link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.preview.css" />
+<link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.min.css" />
 <div class="container-fluid">
     <div class="row">
         @include('articles.nav')
@@ -68,17 +67,19 @@
     //  /plugin/editor.md/lib/
     $(function() {
         // markdown内容的显示
-        var testEditormdView, testEditormdView2;
+        var testEditormdView;
 
         testEditormdView = editormd.markdownToHTML("main", {
-            markdown        : $('#main-content').html()+ "\r\n" ,// + $("#append-test").text(),
-            htmlDecode      : "style,script,iframe",  // you can filter tags decode
-            emoji           : true,
-            taskList        : true,
-            tex             : true,  // 默认不解析
-            flowChart       : true,  // 默认不解析
-            sequenceDiagram : true,  // 默认不解析
+//            markdown        : $('#main-content').html(),// + $("#append-test").text(),
+            htmlDecode: "style,script,iframe",  // you can filter tags decode
+            emoji: true,
+            taskList: true,
+            tex: true,  // 默认不解析
+            flowChart: true,  // 默认不解析
+            sequenceDiagram: true,  // 默认不解析
+            codeFold: true
         });
+
     });
 
 </script>
