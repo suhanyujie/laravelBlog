@@ -8,14 +8,15 @@
 @stop
 
 @section('content')
+
+<link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.min.css" />
 <style>
-    .article-content{ max-width: 58em;margin:0 auto; font-size: 1.6rem;color: #3d464d;line-height: 30px;
+    .article-content,#main{ max-width: 58em;margin:0 auto; font-size: 1.6rem;color: #3d464d;line-height: 30px;
         font-family: "Lantinghei SC","Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
         border-bottom: 2px solid #ccc;
     }
 
 </style>
-<link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.min.css" />
 <div class="container-fluid">
     <div class="row">
         @include('articles.nav')
