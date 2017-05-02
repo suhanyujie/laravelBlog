@@ -153,6 +153,7 @@
 				<a href="http://www.ruanwenwu.cn/" class="label label-primary">文武's blog</a>
                 <a href="https://blog.sylingd.com" class="label label-primary">泷涯零点</a>
                 <a href="http://www.xtgxiso.com/" class="label label-primary">张素杰博客</a>
+				<a href="http://yshblog.com/">杨仕航的博客</a>
 
 
     		</div>
