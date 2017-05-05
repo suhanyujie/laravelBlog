@@ -76,7 +76,7 @@
                         			<time class="post-date" datetime="{{ $row['publish_date'] }}"
                         				title="{{ $row['publish_date'] }}">{{ $row['publish_date'] }}</time>
 									@foreach($row['tagInfo'] as $tag)
-									    <a href="/tag/5.html" class="label label-info">{{$tag['tag_name']}}</a>
+									    <a href="/articles/tag/5" class="label label-info">{{$tag['tag_name']}}</a>
 									@endforeach
                         		</div>
                         	</div>
@@ -130,12 +130,12 @@
 		<div class="widget little-label">
     		<h4 class="title">标签云</h4>
     		<div class="content tag-cloud">
-				<a href="/tag/5.html" class="label label-info">Mysql</a>
-				<a href="/tag/6.html" class="label label-info">Yaf</a>
-				<a href="/tag/7.html" class="label label-info">Yar</a>
-				<a href="/tag/8.html" class="label label-info">Mongodb</a>
-				<a href="/tag/9.html" class="label label-info">Amoeba</a>
-				<a href="/tag/10.html" class="label label-info">PHP进程管理</a>
+				<a href="/articles/tag/5" class="label label-info">Mysql</a>
+				<a href="/articles/tag/6" class="label label-info">Yaf</a>
+				<a href="/articles/tag/7" class="label label-info">Yar</a>
+				<a href="/articles/tag/8" class="label label-info">Mongodb</a>
+				<a href="/articles/tag/9" class="label label-info">Amoeba</a>
+				<a href="/articles/tag/10" class="label label-info">PHP进程管理</a>
 				<a href="javascript:void(0);">...</a>
     		</div>
     	</div>
@@ -153,7 +153,7 @@
 				<a href="http://www.ruanwenwu.cn/" class="label label-primary">文武's blog</a>
                 <a href="https://blog.sylingd.com" class="label label-primary">泷涯零点</a>
                 <a href="http://www.xtgxiso.com/" class="label label-primary">张素杰博客</a>
-				<a href="http://yshblog.com/">杨仕航的博客</a>
+				<a href="http://yshblog.com/" class="label label-primary">杨仕航的博客</a>
 
 
     		</div>
