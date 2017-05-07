@@ -76,7 +76,7 @@
                         			<time class="post-date" datetime="{{ $row['publish_date'] }}"
                         				title="{{ $row['publish_date'] }}">{{ $row['publish_date'] }}</time>
 									@foreach($row['tagInfo'] as $tag)
-									    <a href="/articles/tag/5" class="label label-info">{{$tag['tag_name']}}</a>
+									    <a href="/articles/tag/{{$tag['id']}}" class="label label-info">{{$tag['tag_name']}}</a>
 									@endforeach
                         		</div>
                         	</div>
