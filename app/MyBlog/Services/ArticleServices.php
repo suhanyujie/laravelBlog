@@ -104,13 +104,16 @@ class ArticleServices extends BaseServices
         // 在旧的标签中 不存在,就要(新增标签|新增关联)
         $newTags = array_diff($tagArr, $oldTagArr);
         // 在更新后的标签中不存在的,旧标签群中有的,则需要删除
-        $toDeleteTags = array_diff($oldTagArr, $tagArr);
+        $toDeleteTags = $oldTagArr ?
+                array_diff($oldTagArr, $tagArr) : [];
+
         if($newTags){
             foreach($newTags as $k=>$row){
+                if(!$row)continue;
                 $res = Tags::where('tag_name',$row)->get();
                 $res = $res->first();
-                if( $res->count() > 0 ){
-                    $tagInsertId = $oldTagArrFlip[$row];
+                if( $res && $res->count() > 0 ){
+                    $tagInsertId = isset($oldTagArrFlip[$row]) ? $oldTagArrFlip[$row] : 0;
                     if(!$tagInsertId)throw new \ErrorException('there is something error--'.__CLASS__);
                 }else{
                     $tags = ['tag_name'=>$row];

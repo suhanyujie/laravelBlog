@@ -109,7 +109,7 @@ class ArticlesController extends Controller
                     $tags = ['tag_name'=>$v];
                     $tagExist = Model\Article\Tags::where('tag_name',$v)->get();
                     if( $tagExist->count() > 0 ){
-//                      $tagInsertId = $tagExist;
+                        $tagInsertId = $tagExist->id;
                     } else {
                         $tagInsertId = Model\Article\Tags::create($tags)->id;
                     }

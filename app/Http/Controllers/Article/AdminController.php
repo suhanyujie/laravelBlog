@@ -36,7 +36,7 @@ class AdminController extends Controller
             return redirect('/auth/login');
         }
         // 一页多少文章
-        $pageNum = 8;
+        $pageNum = 20;
         $userInfo = \Auth::user();
         $data = array();
         $data['articles'] = \App\Article::latest()->get();
