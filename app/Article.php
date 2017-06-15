@@ -9,7 +9,9 @@ use Carbon\Carbon;
 class Article extends Model
 {
 	protected $table = 'blog_articles';
-	protected $fillable =array('created_at','updated_at','title','class_id','subclass_id','publish_date','publish_status','status');
+	protected $fillable =array('created_at','updated_at','title','class_id',
+			'subclass_id','publish_date','publish_status','status','pv',
+		);
 	protected $dates = ['publish_date'];
 
 	/**

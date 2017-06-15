@@ -134,7 +134,11 @@ class ArticlesController extends Controller
     public function show($id)
     {
         $data = Article::findOrFail($id);
+        // 文章pv数的更新
+        $newPv = $data->pv+1;
+        Article::find($id)->update(['pv'=>$newPv,]);
         $data->content = Article::find($id)->hasOneContent->content;
+
         if($data->id > 127){
             return view('articles.showMd',compact('data'));
         }
