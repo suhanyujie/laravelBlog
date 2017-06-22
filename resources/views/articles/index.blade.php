@@ -89,7 +89,7 @@
                         
                         	<footer class="post-footer clearfix">
                         		<div class="pull-left tag-list">
-                        			 <span class='glyphicon glyphicon-eye-open' style="padding-left:10px;"><span style="padding-left:3px;">共有136人浏览</span></span>
+                        			 <span class='glyphicon glyphicon-eye-open' style="padding-left:10px;"><span style="padding-left:3px;">共有{{ $row['pv']  }}人浏览</span></span>
                         		</div>
                         		<div class="pull-right share"></div>
                         	</footer>
