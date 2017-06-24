@@ -113,7 +113,7 @@ class ArticleServices extends BaseServices
                 $res = Tags::where('tag_name',$row)->get();
                 $res = $res->first();
                 if( $res && $res->count() > 0 ){
-                    $tagInsertId = isset($oldTagArrFlip[$row]) ? $oldTagArrFlip[$row] : 0;
+                    $tagInsertId = isset($oldTagArrFlip[$row]) ? $oldTagArrFlip[$row] : $res->id;
                     if(!$tagInsertId)throw new \ErrorException('there is something error--'.__CLASS__);
                 }else{
                     $tags = ['tag_name'=>$row];
