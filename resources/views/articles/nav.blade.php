@@ -66,7 +66,7 @@
                 </ul>
             </li>
             <li class="dropdown" >
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">前沿<strong class="caret"></strong></a>
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">前沿<strong class="caret"></strong></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="https://github.com/ThinkDevelopers/PHPConChina/tree/master/PHPCON2016">phpcon大会</a>
@@ -77,8 +77,8 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="" class="dropdown-toggle">go博客</a>
-                <ul class="drop-menu">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">go博客<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
                     <li>
                         <a href="http://fuxiaohei.me/">fuxiaohei.me</a>
                     </li>
