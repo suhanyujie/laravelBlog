@@ -76,6 +76,14 @@
                     </li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle">go博客</a>
+                <ul class="drop-menu">
+                    <li>
+                        <a href="http://fuxiaohei.me/">fuxiaohei.me</a>
+                    </li>
+                </ul>
+            </li>
 
 
             <li class="dropdown">
