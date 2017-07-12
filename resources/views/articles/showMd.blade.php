@@ -38,16 +38,22 @@
     </div>
 
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-        var duoshuoQuery = {short_name:"ishenghuo"};
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-            || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
+    <div class="row" style="width:70%;margin:0 auto;">
+        <div id="comment-container"></div>
+    </div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            id: "{{$data->id}}", // 可选。默认为 location.href
+            owner: 'suhanyujie',
+            repo: 'selfBlog',
+            oauth: {
+                client_id: 'a7a5719c5c5df45f7558',
+                client_secret: '6b7ef0781a83f320919f0910c998de691d8c00c5',
+            },
+        })
+        gitment.render('comment-container')
     </script>
     <!-- 多说公共JS代码 end -->
 
