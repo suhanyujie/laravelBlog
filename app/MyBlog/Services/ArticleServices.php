@@ -13,6 +13,7 @@ use App\Article;
 use App\Model\Article\RelateTags;
 use App\Model\Article\Tags;
 use Illuminate\Support\Facades\DB;
+use PhpSpec\Exception\Example\ErrorException;
 
 class ArticleServices extends BaseServices
 {
@@ -89,7 +90,9 @@ class ArticleServices extends BaseServices
      * @desc: 更新时,处理标签的逻辑
      * @author:Samuel Su(suhanyu)
      * @date:17/4/2
-     * @param String $param
+     * @throws \ErrorException
+     * @param array $tagArr
+     * @param int $docId
      * @return Array
      */
     public function dealTag($tagArr, $docId) {
