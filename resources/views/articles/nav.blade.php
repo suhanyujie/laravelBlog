@@ -82,6 +82,7 @@
                     <li>
                         <a href="http://fuxiaohei.me/">fuxiaohei.me</a>
                     </li>
+                    <li><a href="https://yuerblog.cc/">鱼儿的博客</a></li>
                 </ul>
             </li>
 
