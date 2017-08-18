@@ -59,10 +59,11 @@
                 </ul>
             </li>
             <li class="dropdown" >
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">设计模式<strong class="caret"></strong></a>
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">设计模式&博客<strong class="caret"></strong></a>
                 <ul class="dropdown-menu">
                     <li><a href="http://laravelacademy.org/post/2935.html">设计模式学习</a></li>
                     <li><a href="http://jaceju.net/">网站制作学习志</a></li>
+                    <li><a href="http://www.bo56.com/">信海龙大师博客</a></li>
                 </ul>
             </li>
             <li class="dropdown" >
