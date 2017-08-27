@@ -58,6 +58,14 @@ return [
     |
     */
 
+    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+            'table' => 'users',
+        ],
+    ],
+
     'password' => [
         'email'  => 'emails.password',
         'table'  => 'password_resets',

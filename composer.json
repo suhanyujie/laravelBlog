@@ -19,7 +19,8 @@
         "arcanedev/log-viewer": "~3.0",
         "hprose/hprose": "^2.0",
         "tymon/jwt-auth": "0.5.*",
-        "dingo/api": "1.0.*@dev"
+        "dingo/api": "1.0.*@dev",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -66,9 +67,11 @@
         "preferred-install": "dist"
     },
     "repositories": {
-        "packagist": {
+        "packagistTest": {
             "type": "composer",
             "url": "https://packagist.phpcomposer.com"
-        }
+        },
+        "packagist": false
     }
+
 }

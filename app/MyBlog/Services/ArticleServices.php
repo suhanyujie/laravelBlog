@@ -32,6 +32,7 @@ class ArticleServices extends BaseServices
 
     /**
      * @desc 获取tag的name等信息
+     * return void
      */
     public function getTagInfo($itemObj){
         $tagModel = new Tags();
@@ -41,6 +42,7 @@ class ArticleServices extends BaseServices
 
     /**
      * @desc:根据标签获取文章列表
+     * @param $id int
      * @author:Samuel Su(suhanyu)
      * @date:17/2/27
      */
@@ -55,6 +57,8 @@ class ArticleServices extends BaseServices
     
     /**
      * @desc:根据文章id获取信息,返回对应的列表
+     * @param array $articleIdArr
+     * @return array
      * @author:Samuel Su(suhanyu)
      * @date:17/2/28
      */
@@ -73,6 +77,8 @@ class ArticleServices extends BaseServices
 
     /**
      * @desc:根据文章id获取对应的文章内容
+     * @param array $articleIdArr
+     * @return array
      * @author:Samuel Su(suhanyu)
      * @date:17/2/28
      */

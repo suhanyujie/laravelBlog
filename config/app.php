@@ -162,6 +162,7 @@ return [
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
+//        Zizaco\Entrust\EntrustServiceProvider::class,// rbac
 
     ],
 
@@ -215,6 +216,7 @@ return [
         'UEditor'   => Stevenyangecho\UEditor\UEditorServiceProvider::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+//        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 
