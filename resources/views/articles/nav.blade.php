@@ -86,6 +86,14 @@
                     <li><a href="https://yuerblog.cc/">鱼儿的博客</a></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">R语言<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="http://fens.me/">粉丝日志</a>
+                    </li>
+                </ul>
+            </li>
 
 
             <li class="dropdown">
