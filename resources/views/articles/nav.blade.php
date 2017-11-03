@@ -64,6 +64,7 @@
                     <li><a href="http://laravelacademy.org/post/2935.html">设计模式学习</a></li>
                     <li><a href="http://jaceju.net/">网站制作学习志</a></li>
                     <li><a href="http://www.bo56.com/">信海龙大师博客</a></li>
+                    <li><a href="http://wiki.phpboy.net/">徐典阳博客</a></li>
                 </ul>
             </li>
             <li class="dropdown" >
