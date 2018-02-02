@@ -56,6 +56,7 @@
                     </li>
                     <li><a href="https://laravel-china.org/docs/5.3/frontend">laravel5.3中文文档</a></li>
                     <li><a href="https://laravel-china.org/laravel-tutorial/5.1/about">laravel入门教程</a></li>
+                    <li><a href="http://static.markbest.site/">PHP相关的知识文档</a></li>
                 </ul>
             </li>
             <li class="dropdown" >
