@@ -97,6 +97,14 @@
                     </li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Python<strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="https://cuiqingcai.com/">崔庆才的个人博客</a>
+                    </li>
+                </ul>
+            </li>
 
 
             <li class="dropdown">
