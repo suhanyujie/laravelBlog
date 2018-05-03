@@ -19,9 +19,6 @@ Route::get('/test-sql', function() {
 Route::get('/','ArticlesController@index');
 //Route::get('/about','SitesController@about');
 Route::post('/upfile','SitesController@about');
-//Route::post('/upfile',function(){
-//    return json_encode(['code'=>1,'msg'=>'success!']);
-//});
 //Route::get('/contact','SitesController@contact');
 
 //Route::get('admin', function () {
@@ -51,7 +48,12 @@ Route::get('/articles/test', function(){
 //    return view('articles.messageOld');
 //});
 
-// 文章的新增编辑等等
+// 文章的新增和展示等等
+Route::match(['get'],'/','ArticlesController@index')->name('main');
+Route::match(['get'],'/articles/{id}','ArticlesController@show')->name('articles_id');
+Route::match(['get'],'/articles/{id}/edit','ArticlesController@edit')->name('articles_edit');
+Route::match(['get'],'/articles/edit/{id}','ArticlesController@edit')->name('articles_edit_id');
+
 Route::resource('articles','ArticlesController');
 // 数据备份路由
 Route::get('/articles/backup','ArticlesController@backup');
@@ -63,6 +65,7 @@ Route::get('auth/register','Auth\AuthController@getRegister');
 Route::post('auth/register','Auth\AuthController@postRegister');
 
 Route::get('auth/logout','Auth\AuthController@getLogout');
+
 
 // API 路由配置
 $api = app('Dingo\Api\Routing\Router');

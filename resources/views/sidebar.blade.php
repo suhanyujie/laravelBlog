@@ -6,7 +6,6 @@
     <meta name="keywords" content="爱生活-锲而不舍" />
     <meta name="description" content="爱生活-锲而不舍" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- basic styles -->
 
     <link href="//cdn.bootcss.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet" />
@@ -54,7 +53,7 @@
 
     <div class="navbar-container" id="navbar-container">
         <div class="navbar-header pull-left">
-            <a href="#" class="navbar-brand">
+            <a href="http://laravel.suhanyu.top" class="navbar-brand">
                 <small>
                     <i class="icon-leaf"></i>
                     爱生活-锲而不舍

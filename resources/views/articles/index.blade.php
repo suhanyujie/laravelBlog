@@ -85,8 +85,11 @@
                         	</div>
                         	<div class="post-permalink">
                         		<a href="{{url('articles',$row['id'])}}" class="btn btn-default">阅读全文</a>
-                        	</div>
-                        
+								@if(\Auth::user())
+									<a href="{{url('articles/edit', ['id'=>$row['id']])}}" class="btn btn-info">编辑</a>
+								@endif
+
+							</div>
                         	<footer class="post-footer clearfix">
                         		<div class="pull-left tag-list">
                         			 <span class='glyphicon glyphicon-eye-open' style="padding-left:10px;"><span style="padding-left:3px;">共有{{ $row['pv']  }}人浏览</span></span>
