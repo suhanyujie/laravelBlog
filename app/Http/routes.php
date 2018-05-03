@@ -78,12 +78,6 @@ $api->version('v1', function ($api) {
 
 });
 
-
-
-/*
-Route::get('/', function () {
-    return view('sites.index');
-});*/
 Route::get('/test/test1', function(){
 
     return view('test.wildDog');
