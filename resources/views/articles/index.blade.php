@@ -64,7 +64,7 @@
 		<div class="container">
 			<div class="row">
 				<main class="col-md-8 main-content">
-					@foreach($data['articles']['data'] as $row)
+					@foreach($articles['data'] as $row)
 						<article id=52 class="post tag-laravel-5-1 tag-artisan">
                         	<div class="post-head">
                         		<h1 class="post-title">
@@ -101,7 +101,7 @@
 
 					<nav class="pagination" role="navigation">
                         <ul class="pagination">
-                            {!! $data['articles']['pageHtml'] !!}
+                            {!! $articles['pageHtml'] !!}
                         </ul>
 					</nav>
 
@@ -133,13 +133,9 @@
 		<div class="widget little-label">
     		<h4 class="title">标签云</h4>
     		<div class="content tag-cloud">
-				<a href="/articles/tag/5" class="label label-info">Mysql</a>
-				<a href="/articles/tag/6" class="label label-info">Yaf</a>
-				<a href="/articles/tag/7" class="label label-info">Yar</a>
-				<a href="/articles/tag/8" class="label label-info">Mongodb</a>
-				<a href="/articles/tag/9" class="label label-info">Amoeba</a>
-				<a href="/articles/tag/10" class="label label-info">PHP进程管理</a>
-				<a href="javascript:void(0);">...</a>
+				@foreach($tags as $k=>$tag)
+				<a href="/articles/tag/{{$tag->id}}" class="label label-info">{{$tag->tag_name}}</a>
+				@endforeach
     		</div>
     	</div>
 		<!--  end tag cloud widget -->

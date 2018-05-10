@@ -8,16 +8,12 @@
 
 namespace MyBlog\Services;
 
-
-use App\Article;
 use App\Model\Article\RelateTags;
 use App\Model\Article\Tags;
 use Illuminate\Support\Facades\DB;
-use PhpSpec\Exception\Example\ErrorException;
 
 class ArticleServices extends BaseServices
 {
-
     /**
      * @desc 处理文章的相关标签
      */
@@ -45,6 +41,7 @@ class ArticleServices extends BaseServices
      * @param $id int
      * @author:Samuel Su(suhanyu)
      * @date:17/2/27
+     * @return array
      */
     public function getListByTag($id) {
         if(!$id)return [];
@@ -96,10 +93,10 @@ class ArticleServices extends BaseServices
      * @desc: 更新时,处理标签的逻辑
      * @author:Samuel Su(suhanyu)
      * @date:17/4/2
-     * @throws \ErrorException
      * @param array $tagArr
      * @param int $docId
-     * @return Array
+     * @return void
+     * @throws \ErrorException
      */
     public function dealTag($tagArr, $docId) {
         // 先取出这个文章的关联标签,和更新后的标签对比
@@ -139,6 +136,47 @@ class ArticleServices extends BaseServices
                 RelateTags::where('article_id', $docId)->where('tag_id', $oldTagArrFlip[$row])->delete();
             }
         }
+    }
+
+    public function getTagList($paramArr=[])
+    {
+        $options = [
+            'id' => '',//
+
+            'fields'  => '*',// string 查询字段
+            'isCount' => '',// 可选：1 是否只返回数据的数量
+            'debug'   => '',// 可选：1 调试，为true时，打印出sql语句
+            'offset'  => 0,// 可选 int mysql查询数据的偏移量
+            'limit'   => 1,// 可选 int mysql查询数据的条数限制
+        ];
+        is_array($paramArr) && $options = array_merge($options, $paramArr);
+        extract($options);
+        $model = new Tags();
+        if (!empty($id)) {
+            if (is_array($id)) {
+                $model = $model->whereIn('id', $id);
+            } else {
+                $model = $model->where('id', $id);
+            }
+        }
+
+        if (!empty($isCount)) {
+            return $model->count();
+        }
+        //order
+        if (!empty($order)) {
+            foreach ($order as $orderField => $orderDir) {
+                $model = $model->orderby($orderField, $orderDir);
+            }
+        } else {
+            $model = $model->orderby('id', 'desc');
+        }
+        $model = $model->offset($offset)->limit($limit);
+        if (!empty($debug)) {
+            echo $model->toSql();exit();
+        }
+        $data = $model->get([$fields]);
+        return $data;
     }
 
 

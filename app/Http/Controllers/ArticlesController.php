@@ -57,11 +57,16 @@ class ArticlesController extends Controller
         }else{
             $dataArticles = Cache::get($cacheKey);
         }
+        //获取标签
+        $tags = $this->articleService->getTagList([
+            'limit' => 18,
+        ]);
         $data['articles'] = $dataArticles;
         $data['articles']['pageHtml'] = $this->page->getPageHtml($dataArticles,$request);
+        $data['tags'] = $tags;
         //var_dump($data);exit();
 
-        return view('articles.index')->with('data',$data);
+        return view('articles.index', $data);
     }
 
     /**
