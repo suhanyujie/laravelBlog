@@ -25,6 +25,11 @@
                     <h1>
                         {{$data->title}}
                     </h1>
+                    <div class="pull-right">
+                        @if(\Auth::user())
+                            <a href="{{url('articles/edit', ['id'=>$data->id])}}" class="btn btn-info">编辑</a>
+                        @endif
+                    </div>
                 </div>
                 <article id="main">
                     <div class="content" style="display:none;">
