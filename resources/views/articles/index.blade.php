@@ -139,8 +139,7 @@
     		</div>
     	</div>
 		<!--  end tag cloud widget -->
-		
-		
+
 		<div class="widget little-label">
     		<h4 class="title">友情链接</h4>
     		<div class="content tag-cloud">
@@ -153,7 +152,6 @@
                 <a href="https://blog.sylingd.com" class="label label-primary">泷涯零点</a>
                 <a href="http://www.xtgxiso.com/" class="label label-primary">张素杰博客</a>
 				<a href="http://yshblog.com/" class="label label-primary">杨仕航的博客</a>
-
 
     		</div>
     	</div>

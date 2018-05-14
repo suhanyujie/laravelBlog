@@ -46,9 +46,6 @@
                         <a href="http://laravelacademy.org/docs/laravel-5_1">laravel学院文档</a>
                     </li>
                     <li>
-                        <a href="http://laravel.so/">laravel.so</a>
-                    </li>
-                    <li>
                         <a href="http://laravelacademy.org/post/153.html">laravel资源大全</a>
                     </li>
                     <li>
