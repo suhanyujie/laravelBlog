@@ -41,7 +41,7 @@ class ArticlesController extends Controller
         // 一页多少文章
         $pageNum = 10;
         $userInfo = \Auth::user();
-        $data = array();
+        $data = [];
         $data['articles'] = Article::latest()->published()->get();
         $data['userInfo'] = $userInfo;
         $dataArticles = array();
@@ -61,6 +61,8 @@ class ArticlesController extends Controller
         $tags = $this->articleService->getTagList([
             'limit' => 18,
         ]);
+        //获取最新文章2个
+        $data['latestArticles'] = $this->articleService->getLastestArticles();
         $data['articles'] = $dataArticles;
         $data['articles']['pageHtml'] = $this->page->getPageHtml($dataArticles,$request);
         $data['tags'] = $tags;

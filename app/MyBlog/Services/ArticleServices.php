@@ -11,6 +11,7 @@ namespace MyBlog\Services;
 use App\Model\Article\RelateTags;
 use App\Model\Article\Tags;
 use Illuminate\Support\Facades\DB;
+use App\Article as ArticleModel;
 
 class ArticleServices extends BaseServices
 {
@@ -138,6 +139,21 @@ class ArticleServices extends BaseServices
         }
     }
 
+    /**
+     * @desc 获取最新的几个文章
+     */
+    public function getLastestArticles()
+    {
+        $model = new ArticleModel();
+        $data = $model->orderBy('id','desc')->offset(0)->limit(2)->get();
+        return $data;
+    }
+
+    /**
+     * @desc 获取标签列表
+     * @param array $paramArr
+     * @return mixed
+     */
     public function getTagList($paramArr=[])
     {
         $options = [

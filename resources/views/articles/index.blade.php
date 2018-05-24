@@ -115,7 +115,11 @@
 	<div class="widget">
 		<h4 class="title">最近文章</h4>
 		<ul style="list-style:none;padding:0px;font-size:14px;">
-	  	  	<li><a href="/detail/22.html" class="list-group-item" style="border:none;">Socket.io的实时竞拍系统实现</a></li>
+			@if($latestArticles)
+				@foreach($latestArticles as $k=>$article)
+					<li><a href="/articles/{{$article->id}}" class="list-group-item" style="border:none;">{{$article->title}}</a></li>
+				@endforeach
+			@endif
 		</ul>
 	</div>
 	<!-- end tag cloud widget -->
