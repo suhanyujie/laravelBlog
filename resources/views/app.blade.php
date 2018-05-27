@@ -8,18 +8,11 @@
     <meta name="baidu-site-verification" content="B29FDA674B" />
     <meta http-equiv="Cache-Control" content="no-transform " />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <!-- 可选的Bootstrap主题文件（一般不用引入）1 -->
-    <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/my_style/my_blog_style.css">
-
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入-->
-    <script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="/my_style/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/bootstrap.min.css">
+    <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/font-awesome.min.css">
+    <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/monokai_sublime.min.css">
 </head>
 <body>
 @yield('content')

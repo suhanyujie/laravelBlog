@@ -11,9 +11,9 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <meta name="HandheldFriendly" content="True" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/8.5/styles/monokai_sublime.min.css">
+<link rel="stylesheet" href="/my_style/bootstrap/3.3.5/bootstrap.min.css">
+<link rel="stylesheet" href="/my_style/bootstrap/3.3.5/font-awesome.min.css">
+<link rel="stylesheet" href="/my_style/bootstrap/3.3.5/monokai_sublime.min.css">
 <style>
 .content-wrap { background: rgba(217, 238, 214, 0.78);}
 .navbar{ margin-bottom:0;}
