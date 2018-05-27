@@ -143,8 +143,6 @@
 	<!-- start widget -->
 	<div class="widget">
 		<h4 class="title">联系我</h4>
-
-		
 		<p style="margin-top:10px;"><span style="color:red;">Email</span> : suhanyujie@qq.com</p>
 	</div>
 	<!-- end widget -->
@@ -152,23 +150,18 @@
 			</div>
 		</div>
 	</section>
-
+<!-- 回到顶部 -->
 <a href="javascript:void(0);" id="back-to-top" target="_self"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
 
-<script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
-<script src="/my_style/bootstrap/3.3.5/bootstrap.min.css"></script>
-<script src="//cdn.bootcss.com/fitvids/1.1.0/jquery.fitvids.min.js"></script>
-<script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
 <script type="text/javascript">
 $(window).scroll(function(){
     var sT=$(this).scrollTop();
-    if(sT >= 850) {
+    if(sT >= 900) {
         $('#back-to-top').show();
     }
-    if(sT < 850){
+    if(sT < 900){
         $('#back-to-top').hide();
     }
-   
 });
 $('#back-to-top').click(function(){
 	$(window).scrollTop(0);
