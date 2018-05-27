@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>爱生活-锲而不舍</title>
-<meta name="keywords" content="亡命之徒|寻觅|苏汉宇|850099803" />
-<meta name="description" content="苏汉宇个人博客，是记录博主学习和成长,结束交流的一个自媒体博客。关注于web后端技术(PHP)和服务端编程的学习研究,同时喜欢前端工程化,喜欢Node,Vue,webPack等等..！" />
-<meta name="baidu-site-verification" content="B29FDA674B" />
-<meta http-equiv="Cache-Control" content="no-transform " />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="HandheldFriendly" content="True" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="/my_style/bootstrap/3.3.5/bootstrap.min.css">
-<link rel="stylesheet" href="/my_style/bootstrap/3.3.5/font-awesome.min.css">
-<link rel="stylesheet" href="/my_style/bootstrap/3.3.5/monokai_sublime.min.css">
+@extends('app')
+
+@section('content')
 <style>
 .content-wrap { background: rgba(217, 238, 214, 0.78);}
 .navbar{ margin-bottom:0;}
@@ -21,16 +8,12 @@
 ::-moz-selection{background:#cc8e9b; color:#FCF;}
 ::selection {background: #cc8e9b; color:#FCF;}
 .content-wrap .main-content article,.content-wrap .main-content .little-label{ background:#fff;border:1px solid #ccc; margin-top:20px; padding:10px; border-radius:10px; opacity:0.7; } 
-
 .content-wrap .main-content article .post-content{ margin:10px auto; }
 .content-wrap .main-content article .post-permalink{ margin-bottom:10px; }
-
 /* 返回顶部 */
 #back-to-top{ position: fixed;z-index: 99; left: 50%; bottom: 60px; width: 40px; height: 48px;border-radius:5px; margin-left: 510px;margin-right:30px;background:url(//icon.zol-img.com.cn/mainpage/20150210/index-icon-20150505.png)no-repeat;background-position:50% -386px;background-color:#fafafa;text-indent:-9999em;font:0/0 arial;overflow:hidden;}
 #back-to-top:hover{ background-color:#6393E2; }
-
 </style>
-<base target="_self"/>
 <script>
 	//  1. Sidebar Position
 	var sidebar_left = false; // Set true or flase for positioning sidebar on left
@@ -51,9 +34,6 @@
 		background:#f7f7f7;
 	}
 </style>
-</head>
-
-<body class="home-template">
 	<!-- start navigation -->
 @include('articles.nav')
 
@@ -187,8 +167,8 @@
 
 <a href="javascript:void(0);" id="back-to-top" target="_self"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
 
-<script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
+<script src="/my_style/bootstrap/3.3.5/bootstrap.min.css"></script>
 <script src="//cdn.bootcss.com/fitvids/1.1.0/jquery.fitvids.min.js"></script>
 <script src="//cdn.bootcss.com/highlight.js/8.5/highlight.min.js"></script>
 <script type="text/javascript">
@@ -206,7 +186,8 @@ $('#back-to-top').click(function(){
 	$(window).scrollTop(0);
 });
 
+
+
 </script>
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259999548'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1259999548%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-</body>
-</html>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259999548'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1259999548%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+@stop

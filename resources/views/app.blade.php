@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     @yield('title')
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="keywords" content="亡命之徒|寻觅|苏汉宇|850099803" />
     <meta name="description" content="苏汉宇个人博客，是记录博主学习和成长,结束交流的一个自媒体博客。关注于web后端技术(PHP)和服务端编程的学习研究,同时喜欢前端工程化,喜欢Node,Vue,webPack等等..！" />
     <meta name="baidu-site-verification" content="B29FDA674B" />
@@ -13,6 +14,8 @@
     <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/bootstrap.min.css">
     <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/font-awesome.min.css">
     <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/monokai_sublime.min.css">
+    <script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
+    <base target="_slef"/>
 </head>
 <body>
 @yield('content')
