@@ -153,18 +153,6 @@
 		</div>
 	</section>
 
-	
-<div class="copyright">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<span>Copyright &copy; <a href="//laravel.suhanyu.top">laravel.suhanyu.top 个人博客</a> </span> | <span><a href="//laravel.suhanyu.top/"
-						target="_blank">爱生活-锲而不舍</a>
-			</div>
-		</div>
-	</div>
-</div>
-
 <a href="javascript:void(0);" id="back-to-top" target="_self"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
 
 <script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
@@ -186,8 +174,9 @@ $('#back-to-top').click(function(){
 	$(window).scrollTop(0);
 });
 
-
-
 </script>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259999548'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1259999548%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+@stop
+
+@section('footer')
+	@include('articles.footer')
 @stop

@@ -20,26 +20,23 @@
 <div class="container-fluid">
     <div class="row">
         @include('articles.nav')
-            <div class="article-content">
-                <div class="page-header">
-                    <h1>
-                        {{$data->title}}
-                    </h1>
-                    <div class="pull-right">
-                        @if(\Auth::user())
-                            <a href="{{url('articles/edit', ['id'=>$data->id])}}" class="btn btn-info">编辑</a>
-                        @endif
-                    </div>
+        <div class="article-content">
+            <div class="page-header">
+                <h1>
+                    {{$data->title}}
+                </h1>
+                <div class="pull-right">
+                    @if(\Auth::user())
+                        <a href="{{url('articles/edit', ['id'=>$data->id])}}" class="btn btn-info">编辑</a>
+                    @endif
                 </div>
-                <article id="main">
-                    <div class="content" style="display:none;">
-                        <textarea id="main-content">{!! $data->content !!}</textarea>
-                    </div>
-                </article>
             </div>
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="{{$data->id}}" data-title="{{$data->title}}" data-url="http://laravel.suhanyu.top/articles/{{$data->id}}"></div>
-        <!-- 多说评论框 end -->
+            <article id="main">
+                <div class="content" style="display:none;">
+                    <textarea id="main-content">{!! $data->content !!}</textarea>
+                </div>
+            </article>
+        </div>
     </div>
 
     @include('articles.footer')
