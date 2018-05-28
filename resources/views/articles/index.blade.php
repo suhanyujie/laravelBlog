@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+<title>汉宇博客的首页|web开发|PHP开发</title>
+	@stop
+
 @section('content')
 <style>
 .content-wrap { background: rgba(217, 238, 214, 0.78);}

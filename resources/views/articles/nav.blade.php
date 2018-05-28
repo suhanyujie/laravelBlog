@@ -125,7 +125,7 @@
             </li>
             @if(!\Auth::user())
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle " data-toggle="dropdown">登陆/注册<strong class="caret"></strong></a>
+                <a href="javascript:void(0)" class="dropdown-toggle " data-toggle="dropdown">登陆/注册<strong class="caret"></strong></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="/auth/login" target="_self">登录</a>

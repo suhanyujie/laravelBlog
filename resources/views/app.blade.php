@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/monokai_sublime.min.css">
     <link rel="stylesheet" href="/my_style/my_blog_style.css">
     <script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/my_style/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/my_style/libs/zepto/zepto.min.js"></script>
     <base target="_slef"/>
 </head>
 <body>
