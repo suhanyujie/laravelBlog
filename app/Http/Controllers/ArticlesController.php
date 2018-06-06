@@ -230,54 +230,56 @@ class ArticlesController extends Controller
         //$keyword = $keywords ? addslashes($keywords) : addslashes($_REQUEST['keywords']);
         //header("content-type:text/html;charset=utf-8");
         // include('/home/tmp/tool/coreseek-3.2.14/csft-3.2.14/api/sphinxapi.php');
-        $s = new \SphinxClient;
-        $s->setServer("localhost", 9312);
-        $s->setArrayResult(true);
-        // $s->setSelect();
-        $s->setMatchMode(SPH_MATCH_ALL);
+        /*
         $result = $searchList = array();
-        if($keyword){
+        */
+        if (0) {
+            $s = new \SphinxClient;
+            $s->setServer("localhost", 9312);
+            $s->setArrayResult(true);
+            // $s->setSelect();
+            $s->setMatchMode(SPH_MATCH_ALL);
             $result = $s->query($keyword, 'test1');
             // 获取检索到的文章id
-            $idArr = array();
-            $data = $titleArr = array();
-            if(isset($result['matches']) && is_array($result['matches'])){
-                foreach ($result['matches'] as $k=>$v){
+            $idArr = [];
+            $data = $titleArr = [];
+            if (isset($result['matches']) && is_array($result['matches'])) {
+                foreach ($result['matches'] as $k => $v) {
                     $idArr[] = $v['attrs']['article_id'];
                 }
                 $idStr = implode(',',$idArr);
-                // 查找文章
-                $data['articles'] = \DB::table('blog_articles')->whereRaw('id in ('.$idStr.')')->get();
-                $contentArr =  \DB::table('blog_content')->whereRaw('article_id in ('.$idStr.')')->get();
-                if($contentArr){
-                    $newContentArr = array();
-                    foreach($contentArr as $k=>$v){
-                        $newContentArr[$v->article_id] = $v->content;
-                    }
-                    $contentArr = $newContentArr;
-                    unset($newContentArr);
-                }
-                if($data['articles']){
-                    foreach($data['articles'] as $k=>$v){
-                        $searchList[$k]['id'] = $v->id;
-                        $searchList[$k]['title'] = $v->title;
-                        $searchList[$k]['content'] = $contentArr[$v->id];
-                    }
-                }
-                //var_dump($searchList);exit();
-                return view('articles.search',compact('searchList'));
-            }
-        }else{
-            $searchList[0]['message'] = '请输入要查询的关键词~';
-            return;
-        }
+               // 查找文章
+               $data['articles'] = \DB::table('blog_articles')->whereRaw('id in ('.$idStr.')')->get();
+               $contentArr =  \DB::table('blog_content')->whereRaw('article_id in ('.$idStr.')')->get();
+               if($contentArr){
+                   $newContentArr = array();
+                   foreach($contentArr as $k=>$v){
+                       $newContentArr[$v->article_id] = $v->content;
+                   }
+                   $contentArr = $newContentArr;
+                   unset($newContentArr);
+               }
+               if($data['articles']){
+                   foreach($data['articles'] as $k=>$v){
+                       $searchList[$k]['id'] = $v->id;
+                       $searchList[$k]['title'] = $v->title;
+                       $searchList[$k]['content'] = $contentArr[$v->id];
+                   }
+               }
+               //var_dump($searchList);exit();
+               return view('articles.search',compact('searchList'));
+           }
+       }else{
+           $searchList[0]['message'] = '请输入要查询的关键词~';
+           return;
+       }
 
-        return view('articles.search',compact('searchList'));
-        //var_dump(rand(1000,9999));
-    }
-    /**
-     * 博客数据库备份
-     */
+       return view('articles.search',compact('searchList'));
+       //var_dump(rand(1000,9999));
+   }
+   /**
+    * 博客数据库备份
+    */
     public function backup(){
         $passwdPart = '6852';
         $command = 'cd /data/backup/;ls;/usr/local/mysql/bin/mysqldump -uroot -p'.$passwdPart.'432 --opt --databases laravel > /data/backup/laravel_'.date('Y-m-d H:').'.bk';
