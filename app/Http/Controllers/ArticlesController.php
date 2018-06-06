@@ -7,13 +7,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
 use MyBlog\Repositories\ArticleRepository;
-
 use App\Article;
 use App\Content;
 use Carbon\Carbon;
 use App\Model;
 use App;
-
 use MyBlog\Services\ArticleServices;
 use MyBlog\Services\PageService;
 use Predis\Client;
