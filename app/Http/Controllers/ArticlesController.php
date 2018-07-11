@@ -36,6 +36,7 @@ class ArticlesController extends Controller
     public function index(Request $request)
     {
         //$a = new ArticleRepository(new \App\Article);
+        //return [$request->json()];
         // 一页多少文章
         $pageNum = 10;
         $userInfo = \Auth::user();

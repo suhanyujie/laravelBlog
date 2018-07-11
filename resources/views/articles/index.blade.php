@@ -141,6 +141,7 @@
                 <a href="http://www.xtgxiso.com/" class="label label-primary">张素杰博客</a>
 				<a href="http://yshblog.com/" class="label label-primary">杨仕航的博客</a>
 				<a href="http://www.seepre.com/" class="label label-primary">发军的博客</a>
+				<a href="https://baijunyao.com/" class="label label-primary">白俊遥博客</a>
 
     		</div>
     	</div>
