@@ -65,7 +65,6 @@ class ArticlesController extends Controller
         $data['articles'] = $dataArticles;
         $data['articles']['pageHtml'] = $this->page->getPageHtml($dataArticles,$request);
         $data['tags'] = $tags;
-        //var_dump($data);exit();
 
         return view('articles.index', $data);
     }
