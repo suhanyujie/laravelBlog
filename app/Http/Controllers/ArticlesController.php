@@ -16,6 +16,7 @@ use MyBlog\Services\ArticleServices;
 use MyBlog\Services\PageService;
 use Predis\Client;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ArticlesController extends Controller
 {
@@ -35,16 +36,15 @@ class ArticlesController extends Controller
      */
     public function index(Request $request)
     {
-        //$a = new ArticleRepository(new \App\Article);
-        //return [$request->json()];
+        $page = $request->input('page');
+        //Log::log('info', 'suhanyu->'.var_export($page, true));
         // 一页多少文章
         $pageNum = 10;
         $userInfo = \Auth::user();
         $data = [];
         $data['articles'] = Article::latest()->published()->get();
         $data['userInfo'] = $userInfo;
-        $dataArticles = array();
-        $curPage = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
+        $curPage = isset($page) ? $page : 1;
         $cacheKey = 'laravel:articles:index:page:'.$curPage;
         if( !Cache::has($cacheKey) || ($request->refresh==1) ){
             //$dataArticles = \App\Article::latest()->take($pageNum)->with('content')->get()->toArray();
