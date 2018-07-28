@@ -108,7 +108,7 @@ class ArticlesController extends Controller
         // tags的存储
         if(isset($input['article_tags'])){
             $addTagsArr = explode(',',$input['article_tags']);
-            $tags = $relateTags = [];
+            $relateTags = [];
             if($addTagsArr){
                 foreach($addTagsArr as $k=>$v){
                     $tags = ['tag_name'=>$v];
@@ -268,8 +268,8 @@ class ArticlesController extends Controller
                return view('articles.search',compact('searchList'));
            }
        }else{
-           $searchList[0]['message'] = '请输入要查询的关键词~';
-           return;
+            $searchList[0]['message'] = '请输入要查询的关键词~';
+            return;
        }
 
        return view('articles.search',compact('searchList'));
