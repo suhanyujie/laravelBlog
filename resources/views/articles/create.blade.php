@@ -220,7 +220,7 @@ if(typeof(ue) != 'undefined' && false){
     var dataObj = UE.utils.str2json(dataStr);
 
     if(dataObj){
-        console.log(dataObj);
+        //console.log(dataObj);
         for(eleKey in dataObj){
             // dataObj[eleKey]
             ue.setContent('<p>123</p>');
@@ -234,7 +234,6 @@ if($('.publish-article').length > 0){
         localStorage.removeItem(articleDataKey);
     });
 }
-
 </script>
 
 @stop
