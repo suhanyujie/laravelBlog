@@ -264,7 +264,6 @@ class ArticlesController extends Controller
                        $searchList[$k]['content'] = $contentArr[$v->id];
                    }
                }
-               //var_dump($searchList);exit();
                return view('articles.search',compact('searchList'));
            }
        }else{
@@ -273,7 +272,6 @@ class ArticlesController extends Controller
        }
 
        return view('articles.search',compact('searchList'));
-       //var_dump(rand(1000,9999));
    }
    /**
     * 博客数据库备份
