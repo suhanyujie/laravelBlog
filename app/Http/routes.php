@@ -25,11 +25,12 @@ Route::post('/upfile','SitesController@about');
 //	return view('admin_template');
 //});
 
-/*Route::get('/articles','ArticlesController@index');
 Route::get('/articles/create','ArticlesController@create');
 Route::get('/articles/{id}','ArticlesController@show');
 Route::post('/articles','ArticlesController@store');
-Route::get('/articles/{id}/edit','ArticlesController@edit');*/
+Route::get('/articles/{id}/edit','ArticlesController@edit');
+Route::get('/articles','ArticlesController@index');
+
 
 // 搜索路由
 Route::get('/articles/search','ArticlesController@search');
@@ -82,6 +83,5 @@ Route::get('/test/test1', function(){
 
     return view('test.wildDog');
 });
-
 
 Route::resource('/admin', '\App\Http\Controllers\Article\AdminController');

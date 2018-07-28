@@ -6,10 +6,9 @@
 {{--<link rel="stylesheet" href="https://pandao.github.io/editor.md/lib/codemirror/codemirror.min.css" />--}}
 <link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.min.css" />
 <div class="container">
-    <h1> 撰写新文章1 </h1>
+    <h1> 撰写新文章 </h1>
     <div class="row" style="margin-top:50px;">
         {!! Form::open(['url'=>'/articles']) !!}
-
         <div class="form-group">
             {!! Form::label('title') !!}
             {!! Form::text('title',null,['class'=>'form-control']) !!}
@@ -169,8 +168,6 @@
             onload : function() {
                 setLinkTarget();
             }
-
-
         });
 
         //ctrl+s保存
@@ -213,14 +210,8 @@
                 reader.readAsDataURL(file);
             }
         }, false);
-
     });
 
-
-</script>
-
-
-<script>
 var articleDataKey = 'ueditor_preference';
 // 加载localstorage数据到编辑器中
 if(typeof(ue) != 'undefined' && false){
