@@ -6,7 +6,7 @@
 {{--<link rel="stylesheet" href="https://pandao.github.io/editor.md/lib/codemirror/codemirror.min.css" />--}}
 <link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.min.css" />
 <div class="container">
-    <h1> 撰写新文章 </h1>
+    <h3> 撰写新文章 </h3>
     <div class="row" style="margin-top:50px;">
         {!! Form::open(['url'=>'/articles']) !!}
         <div class="form-group">
@@ -24,7 +24,7 @@
                 {!! Form::textarea('content',null,['id'=>'container11','class'=>'form-control','style'=>'display:none','placeholder'=>'请写下精彩的文章内容吧~']) !!}
             </div>
         </div>
-        {!! Form::submit('发布文章',['class'=>'btn brn-primary publish-article']) !!}
+        {!! Form::submit('发布文章',['class'=>'btn btn-info publish-article']) !!}
 
         {{--<script type="text/javascript">--}}
             {{--var ue = UE.getEditor('container');--}}

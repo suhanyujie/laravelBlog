@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="form-group">
-                {!! Form::submit('发布文章',['class'=>'btn brn-primary publish-article']) !!}
+                {!! Form::submit('发布文章',['class'=>'btn btn-primary publish-article']) !!}
             </div>
 
            {!! Form::close() !!}
