@@ -36,6 +36,7 @@
                     <textarea id="main-content">{!! $data->content !!}</textarea>
                 </div>
             </article>
+            <i>本文首发于"爱生活，锲而不舍"，转载请务必注明本文链接，版权必究！</i>
         </div>
     </div>
 
