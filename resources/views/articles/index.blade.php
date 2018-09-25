@@ -145,6 +145,7 @@
 				<a href="https://www.0php.net/" class="label label-info">一只贱熊猫的博客</a>
 				<a href="http://vonng.com/blog/" class="label label-info">go-[vonng的博客]</a>
 				<a href="https://tonybai.com/articles/" class="label label-info">go-[Tony Bai]</a>
+				<a href="https://jimmysong.io/" class="label label-info">cloud-[Kubernetes]</a>
     		</div>
     	</div>
 		
