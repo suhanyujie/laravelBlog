@@ -7,6 +7,13 @@
 ## 其他信息
 * 博客地址 http://laravel.suhanyu.top
 
+## 涉及到的技术
+
+### 其他
+
+#### vue相关前端
+* https://laravel-mix.com/docs/2.1/workflow
+
 
 ## 日志
 * 首页右侧增加文章标签的展示 20180510
