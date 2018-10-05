@@ -7,5 +7,6 @@
 
         </div>
     </div>
+    <script type="application/ecmascript" src="https://laravel.suhanyu.top/plugin/other/statistics/statistics.js"></script>
 </footer>
 
