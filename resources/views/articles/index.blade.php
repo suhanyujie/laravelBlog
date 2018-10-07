@@ -148,6 +148,7 @@
 				<a href="https://jimmysong.io/" class="label label-info">cloud-[Kubernetes]</a>
 				<a href="https://lvtao.net/" class="label label-info">后端-[吕滔博客]</a>
 				<a href="https://jiajunhuang.com/" class="label label-info">后端-[Jiajun的编程随想]</a>
+				<a href="https://blog.ti-node.com/" class="label label-info">php-[可能是东半球第二程序员]</a>
     		</div>
     	</div>
 		
