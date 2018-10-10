@@ -149,6 +149,7 @@
 				<a href="https://lvtao.net/" class="label label-info">后端-[吕滔博客]</a>
 				<a href="https://jiajunhuang.com/" class="label label-info">后端-[Jiajun的编程随想]</a>
 				<a href="https://blog.ti-node.com/" class="label label-info">php-[可能是东半球第二程序员]</a>
+				<a href="https://toxmc.github.io/swoole-cs.github.io/" class="label label-info">php-[swoole速查表]</a>
     		</div>
     	</div>
 		
