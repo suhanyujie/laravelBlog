@@ -150,6 +150,7 @@
 				<a href="https://jiajunhuang.com/" class="label label-info">后端-[Jiajun的编程随想]</a>
 				<a href="https://blog.ti-node.com/" class="label label-info">php-[可能是东半球第二程序员]</a>
 				<a href="https://toxmc.github.io/swoole-cs.github.io/" class="label label-info">php-[swoole速查表]</a>
+				<a href="http://www.blogdaren.com/" class="label label-info">php-[BlogDaren]</a>
     		</div>
     	</div>
 		
