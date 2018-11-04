@@ -38,7 +38,6 @@ class UpdateArticleSearchIndex extends Command
     public function handle()
     {
         //echo 123;
-        exec('/usr/local/coreseek/bin/indexer -c /usr/local/coreseek/etc/laravel.conf --all --rotate',$res);
-        var_dump($res);
+        //exec('/usr/local/coreseek/bin/indexer -c /usr/local/coreseek/etc/laravel.conf --all --rotate',$res);
     }
 }
