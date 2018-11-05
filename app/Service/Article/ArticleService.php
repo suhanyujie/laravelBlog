@@ -19,9 +19,18 @@ class ArticleService extends BaseService
     public function getList($paramArr=[])
     {
         $options = [
-
+            'publish_status' => 1,
+            'offset'         => 0,
+            'limit'          => 1
         ];
         $options = array_merge($options, $paramArr);
+        $articles = ArticleModel::where()
+            ->offset()->limit()->get();
+        if ($articles->count()<1)return [];
+        $articles = $articles->map(function ($item) {
 
+        });
+
+        return $articles;
     }
 }
