@@ -11,7 +11,15 @@ namespace App\Service\Article;
 
 use App\Service\BaseService;
 
-class EsIndex extends BaseService
+class EsIndexService extends BaseService
 {
+    /**
+     * @desc 新增数据库中所有文章到es
+     */
+    public function createIndex()
+    {
+
+    }
+
 
 }
