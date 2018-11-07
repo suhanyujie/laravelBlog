@@ -151,6 +151,7 @@
 				<a href="https://blog.ti-node.com/" class="label label-info">php-[可能是东半球第二程序员]</a>
 				<a href="https://toxmc.github.io/swoole-cs.github.io/" class="label label-info">php-[swoole速查表]</a>
 				<a href="http://www.blogdaren.com/" class="label label-info">php-[BlogDaren]</a>
+				<a href="http://blog.phpzendo.com/" class="label label-info">php-[phpZendo]</a>
     		</div>
     	</div>
 		
