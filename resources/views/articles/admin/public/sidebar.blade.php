@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="http://laravel.suhanyu.top/my_style/bootstrap/css/ace.min.css" />
     <link rel="stylesheet" href="http://laravel.suhanyu.top/my_style/bootstrap/css/ace-rtl.min.css" />
     <link rel="stylesheet" href="http://laravel.suhanyu.top/my_style/bootstrap/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="/plugin/iview/css/iview.css" />
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://laravel.suhanyu.top/my_style/bootstrap/css/ace-ie.min.css" />
@@ -43,6 +44,9 @@
     <!--[if lt IE 9]>
     <script src="http://laravel.suhanyu.top/my_style/bootstrap/js/html5shiv.js"></script>
     <script src="http://laravel.suhanyu.top/my_style/bootstrap/js/respond.min.js"></script>
+    <script src="/laravel.suhanyu.top/plugin/iview/js/vue.min.js"></script>
+    <script src="/plugin/iview/js/iview.min.js"></script>
+
     <![endif]-->
 </head>
 
