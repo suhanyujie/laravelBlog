@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('title')
-<title>汉宇博客的首页|web开发|PHP开发</title>
-	@stop
+<title>苏汉宇的博客|博客首页|web开发|PHP开发|golang</title>
+@stop
 
 @section('content')
 <style>
