@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/font-awesome.min.css">
     <link rel="stylesheet" href="/my_style/bootstrap/3.3.5/monokai_sublime.min.css">
     <link rel="stylesheet" href="/my_style/my_blog_style.css">
+    <script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
     <base target="_slef"/>
 </head>
 <body>
 @yield('content')
 
 @yield('footer')
-<script src="/my_style/jquery/1.11.3/jquery.min.js"></script>
+
 <script src="/my_style/bootstrap/js/bootstrap.min.js"></script>
 <script src="/my_style/libs/zepto/zepto.min.js"></script>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259999548'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1259999548%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
