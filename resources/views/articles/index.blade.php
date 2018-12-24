@@ -155,6 +155,7 @@
 				<a href="http://blog.91mylover.top/" class="label label-info">php-[黑-白]</a>
 				<a href="http://vipleechen.xyz/" class="label label-info">java-[LeeChen博客]</a>
 				<a href="http://www.iocoder.cn/" class="label label-info">[纯源码解析博客]</a>
+				<a href="https://colobu.com/archives/" class="label label-info">go-[鸟窝]</a>
     		</div>
     	</div>
 		
