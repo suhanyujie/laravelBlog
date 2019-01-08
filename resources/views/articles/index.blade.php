@@ -153,6 +153,11 @@
 				<a href="http://www.blogdaren.com/" class="label label-info">php-[BlogDaren]</a>
 				<a href="http://blog.phpzendo.com/" class="label label-info">php-[phpZendo]</a>
 				<a href="http://blog.91mylover.top/" class="label label-info">php-[黑-白]</a>
+				<a href="http://vipleechen.xyz/" class="label label-info">java-[LeeChen博客]</a>
+				<a href="http://www.iocoder.cn/" class="label label-info">[纯源码解析博客]</a>
+				<a href="https://colobu.com/archives/" class="label label-info">go-[鸟窝]</a>
+				<a href="http://blog.yurunsoft.com/" class="label label-info">php-[宇润的博客]</a>
+				<a href="https://www.ctolib.com/" class="label label-info">综合-[码库CTOLib.COM]</a>
     		</div>
     	</div>
 		

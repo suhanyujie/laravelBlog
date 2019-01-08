@@ -163,7 +163,8 @@ return [
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
 //        Zizaco\Entrust\EntrustServiceProvider::class,// rbac
-        Laravoole\LaravooleServiceProvider::class,
+
+//        Laravoole\LaravooleServiceProvider::class,
     ],
 
     /*
