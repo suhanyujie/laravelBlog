@@ -108,15 +108,6 @@
 	</div>
 	<!-- end tag cloud widget -->
 
-	<!-- start widget -->
-		<div class="widget">
-		<h4 class="title">博文分类</h4>
-		<ul style="list-style:none;padding:0px;font-size:14px;">
-			<li><a href="/list/13.html" class="list-group-item" style="border:none;">PHP<span class="badge">3</span></a></li>
-		</ul>
-	</div>
-		<!-- end widget -->
-	
 	<!-- start tag cloud widget -->
 		<div class="widget little-label">
     		<h4 class="title">标签云</h4>
