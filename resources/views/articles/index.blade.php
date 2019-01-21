@@ -147,6 +147,7 @@
 				<a href="http://vipleechen.xyz/" class="label label-info">java-[LeeChen博客]</a>
 				<a href="http://www.iocoder.cn/" class="label label-info">[纯源码解析博客]</a>
 				<a href="https://colobu.com/archives/" class="label label-info">go-[鸟窝]</a>
+				<a href="https://c.isme.pub/" class="label label-info">go-[Casstiel博客]</a>
 				<a href="http://blog.yurunsoft.com/" class="label label-info">php-[宇润的博客]</a>
 				<a href="https://www.ctolib.com/" class="label label-info">综合-[码库CTOLib.COM]</a>
 				<a href="https://os.phil-opp.com/" class="label label-info">Rust-[Writing an OS in Rust]</a>
