@@ -152,6 +152,7 @@
 				<a href="https://blog.it2048.cn/" class="label label-info">php-[我是大熊]</a>
 				<a href="https://www.ctolib.com/" class="label label-info">综合-[码库CTOLib.COM]</a>
 				<a href="https://os.phil-opp.com/" class="label label-info">Rust-[Writing an OS in Rust]</a>
+				<a href="http://tinylab.org/projects/" class="label label-info">linux-[泰晓科技-官博]</a>
     		</div>
     	</div>
 		
