@@ -148,6 +148,7 @@
 				<a href="http://www.iocoder.cn/" class="label label-info">[纯源码解析博客]</a>
 				<a href="https://colobu.com/archives/" class="label label-info">go-[鸟窝]</a>
 				<a href="https://c.isme.pub/" class="label label-info">go-[Casstiel博客]</a>
+				<a href="https://draveness.me/" class="label label-info" title="面向信仰编程">go-[Draveness's Blog]</a>
 				<a href="http://blog.yurunsoft.com/" class="label label-info">php-[宇润的博客]</a>
 				<a href="https://blog.it2048.cn/" class="label label-info">php-[我是大熊]</a>
 				<a href="https://www.ctolib.com/" class="label label-info">综合-[码库CTOLib.COM]</a>
