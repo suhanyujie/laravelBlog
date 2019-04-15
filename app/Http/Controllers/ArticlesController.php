@@ -281,14 +281,13 @@ class ArticlesController extends Controller
      */
     public function backup()
     {
-        $passwdPart = '6852';
-        $command    = 'cd /data/backup/;ls;/usr/local/mysql/bin/mysqldump -uroot -p' . $passwdPart . '432 --opt --databases laravel > /data/backup/laravel_' . date('Y-m-d H:') . '.bk';
-        system($command, $return);
+        $passwdPart = 'c3M=';
+        $command    = '/usr/local/mysql/bin/mysqldump -h 127.0.0.1 -u root --password="' . base64_decode($passwdPart) . '1234" '."\"laravel\"".' > /data/backup/laravel_' . date('YmdHis') . '.bk';
+        exec($command, $return);
         echo '<pre>';
         var_dump($return);
         echo '</pre>';
         echo '备份成功! <a href="/"> 回到首页 </a>';
-        exit();
     }
 
     public function test1()

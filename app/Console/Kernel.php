@@ -28,5 +28,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('inspire')
                  ->hourly();
         $schedule->command('article:search')->twiceDaily(9, 13);
+        $schedule->command('mysql:backup')->daily();
     }
 }
