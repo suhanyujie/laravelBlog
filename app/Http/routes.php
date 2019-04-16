@@ -25,6 +25,9 @@ Route::post('/upfile','SitesController@about');
 //	return view('admin_template');
 //});
 
+// 数据备份路由
+Route::get('/articles/backup','ArticlesController@backup');
+
 Route::get('/articles/create','ArticlesController@create');
 Route::get('/articles/{id}','ArticlesController@show');
 Route::post('/articles','ArticlesController@store');
@@ -43,6 +46,7 @@ Route::post('/articles/message','Article\LeaveMessageController@store');
 Route::get('/articles/test', function(){
     return [123];
 });
+
 // Route::resource('/articles/message','\App\Http\Controllers\Article\LeaveMessageController');
 
 //Route::get('/articles/testmessage',function(){
@@ -56,8 +60,6 @@ Route::match(['get'],'/articles/{id}/edit','ArticlesController@edit')->name('art
 Route::match(['get'],'/articles/edit/{id}','ArticlesController@edit')->name('articles_edit_id');
 
 Route::resource('articles','ArticlesController');
-// 数据备份路由
-Route::get('/articles/backup','ArticlesController@backup');
 
 Route::get('auth/login','Auth\AuthController@getLogin');
 Route::post('auth/login','Auth\AuthController@postLogin');
@@ -74,9 +76,7 @@ $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
         $api->post('user/login','AuthController@authenticate');
         $api->get('/test/articles','ArticleController@index');
-
     });
-
 });
 
 Route::get('/test/test1', function(){

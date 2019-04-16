@@ -4,17 +4,19 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\MysqlBackup;
 
 class Kernel extends ConsoleKernel
 {
     /**
-     * The Artisan commands provided by your application. /www/html/laravel/html/blog
+     * The Artisan commands provided by your application.
      *
      * @var array
      */
     protected $commands = [
         Commands\Inspire::class,
         Commands\UpdateArticleSearchIndex::class,
+        MysqlBackup::class,
     ];
 
     /**
@@ -25,6 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('mysql:backup')->everyMinute();
         $schedule->command('inspire')
                  ->hourly();
         $schedule->command('article:search')->twiceDaily(9, 13);
