@@ -276,20 +276,6 @@ class ArticlesController extends Controller
         return view('articles.search', compact('searchList'));
     }
 
-    /**
-     * 博客数据库备份
-     */
-    public function backup()
-    {
-        $passwdPart = 'c3M=';
-        $command    = '/usr/local/mysql/bin/mysqldump -h 127.0.0.1 -u root --password="' . base64_decode($passwdPart) . '1234" '."\"laravel\"".' > /data/backup/laravel_' . date('YmdHis') . '.bk';
-        exec($command, $return);
-        echo '<pre>';
-        var_dump($return);
-        echo '</pre>';
-        echo '备份成功! <a href="/"> 回到首页 </a>';
-    }
-
     public function test1()
     {
         return view('articles/admin/public/siderbar');

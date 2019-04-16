@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Commands;
+namespace App\Console\Commands;
 
-use App\Commands\Command;
+use App\Service\Article\MysqlToolService;
+use Illuminate\Console\Command;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class MysqlBackup extends Command implements SelfHandling
@@ -15,13 +16,20 @@ class MysqlBackup extends Command implements SelfHandling
     protected $signature = 'mysql:backup';
 
     /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = '备份博客的数据库。';
+
+    /**
      * Create a new command instance.
      *
      * @return void
      */
     public function __construct()
     {
-        //
+        parent::__construct();
     }
 
     /**
@@ -31,7 +39,6 @@ class MysqlBackup extends Command implements SelfHandling
      */
     public function handle()
     {
-        echo "123\n";
-        file_put_contents(storage_path('test_schedual.log'), date("Y-m-d H:i:s\t"));
+        MysqlToolService::backup();
     }
 }
