@@ -68,11 +68,10 @@
         "preferred-install": "dist"
     },
     "repositories": {
-        "packagistTest": {
+        "packagist": {
             "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        },
-        "packagist": false
+            "url": "https://packagist.laravel-china.org"
+        }
     }
 
 }

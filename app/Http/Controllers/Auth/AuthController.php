@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
+use App\MyBlog\Services\AuthService;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Http\Request;
+use Validator;
 
 class AuthController extends Controller
 {
 
-    protected $redirectPath = '/articles';
+    protected $redirectPath = '/';
+
+    protected $loginPath = '';
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -30,9 +35,25 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
         //$this->middleware('guest', ['except' => 'getLogout']);
+        if (basename($request->getUri()) == 'login' && $request->isMethod('post')) {
+
+        }
+    }
+
+    public function selfPostLogin(Request $request)
+    {
+        // 人机识别
+        $result = $this->resolveReCAPTCHAV3($request);
+        // status为1、2的，大概率不是机器人
+        if ($result['status'] != 1 && $result['status'] != 2) {
+            $validate = Validator::make([],[])->errors()->add('isValid',"您的身份可能是机器人。{$result['msg']}");
+            return back()->withErrors($validate);
+        }
+
+        return $this->postLogin($request);
     }
 
     /**
@@ -49,7 +70,6 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
-    
 
     /**
      *  退出登录
@@ -61,8 +81,6 @@ class AuthController extends Controller
         return Redirect::to('login');
     }
     
-    
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -76,5 +94,36 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     * 检查是否是机器人
+     *  status :
+     *      1 正常
+     *      2 可能是机器人
+     *      其他 是机器人
+     * @param Request $request
+     * @return array|void
+     */
+    public function resolveReCAPTCHAV3(Request $request)
+    {
+        $postData = $request->all();
+        $service = new AuthService;
+        try {
+            $result = $service->resolveRecaptchaV3([
+                'secret'   => env('GOOGLE_RECAPTCHA_SECRET',''),// required
+                'response' => $postData['token'],// required
+            ]);
+            if ($result['status'] == 1) {
+                $result = $service->checkIsBot($result['data']);
+            }
+        }catch (\Exception $e) {
+            $result = [
+                'status'=>$e->getCode(),
+                'msg'=>$e->getMessage(),
+            ];
+        }
+
+        return $result;
     }
 }

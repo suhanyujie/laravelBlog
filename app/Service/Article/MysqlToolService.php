@@ -16,8 +16,7 @@ class MysqlToolService
      */
     public static function backup()
     {
-        $passwdPart = 'c3M=';
-        $command    = '/usr/local/mysql/bin/mysqldump -h 127.0.0.1 -u root --password="' . base64_decode($passwdPart) . '1234" '."\"laravel\"".' > /data/backup/laravel_' . date('YmdHis') . '.bk';
+        $command    = '/usr/local/mysql/bin/mysqldump -h 127.0.0.1 -u root --password="' . env('DB_PASSWORD','') . '" '."\"laravel\"".' > /data/backup/laravel_' . date('YmdHis') . '.bk';
         exec($command, $return);
         $retString = "";
         if (is_array($return)) {

@@ -62,7 +62,7 @@ Route::match(['get'],'/articles/edit/{id}','ArticlesController@edit')->name('art
 Route::resource('articles','ArticlesController');
 
 Route::get('auth/login','Auth\AuthController@getLogin');
-Route::post('auth/login','Auth\AuthController@postLogin');
+Route::post('auth/login','Auth\AuthController@selfPostLogin');
 
 Route::get('auth/register','Auth\AuthController@getRegister');
 Route::post('auth/register','Auth\AuthController@postRegister');
