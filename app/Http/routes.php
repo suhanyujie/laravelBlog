@@ -40,7 +40,7 @@ Route::get('/articles/search','ArticlesController@search');
 // 标签列表页
 Route::get('/articles/tag/{id}','ArticlesController@tagList');
 // 留言路由
-Route::get('/articles/message', 'Article\LeaveMessageController@index');
+Route::get('/articles/message/list', 'Article\LeaveMessageController@index');
 Route::get('/articles/message/create','Article\LeaveMessageController@create');
 Route::post('/articles/message','Article\LeaveMessageController@store');
 Route::get('/articles/test', function(){

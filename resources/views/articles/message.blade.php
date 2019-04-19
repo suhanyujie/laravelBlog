@@ -10,26 +10,33 @@
     {{--markdown显示 End--}}
 
     <div class="container" style="margin-bottom: 20px;">
-        <div id="layout" class="row" style="margin-top: 20px;">
-            <h2>留言列表</h2>
-            @foreach($dataList as $k=>$v)
-                <div class="media">
-                    <div class="media-left">
-                        <a href="javascript:void(0)">
-                            <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU3NThmOGZkZCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTc1OGY4ZmRkIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{$v['username']}}<small class="label label-info">{{$v['created_at']}}</small></h4>
-                        <div id="message-content-{{$k}}">
-                            <textarea style="display: none;" class="message-content"  >{!! trim($v['message']) !!}</textarea>
+        <div class="row">
+            <div class="col-sm-10">
+                <div id="layout" class="row" style="margin-top: 20px;">
+                    <h2>留言列表</h2>
+                    @foreach($dataList as $k=>$v)
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="javascript:void(0)">
+                                    <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTU3NThmOGZkZCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTc1OGY4ZmRkIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{$v['username']}}<small class="label label-info">{{$v['created_at']}}</small></h4>
+                                <div id="message-content-{{$k}}">
+                                    <textarea style="display: none;" class="message-content"  >{!! trim($v['message']) !!}</textarea>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
-
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <button type="button" class="next-page-btn btn btn-default" data-curPage="{{$page}}">下一页</button>
+                    </li>
+                </ul>
+            </div>
         </div>
-
     </div>
     <!--  读markdown时引入js Start-->
     <script src="/plugin/editor.md/lib/marked.min.js"></script>
@@ -58,6 +65,12 @@
                 });
                 //console.log(testEditormdView2.getMarkdown());
             });
+
+            $('.next-page-btn').on('click', function () {
+                var curPage = $(this).data('curpage');
+                location.href = "http://"+location.hostname+location.pathname+"?p="+(curPage+1)
+            });
+
         });
 
     </script>

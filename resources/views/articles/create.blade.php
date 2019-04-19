@@ -1,10 +1,10 @@
 @extends('app')
 @section('content')
 {{--@include('UEditor::head')--}}
-<link rel="stylesheet" href="http://laravel.suhanyu.top/my_style/editor/css/jquery.tagsinput.min.css" />
-<script src="http://laravel.suhanyu.top/my_style/editor/js/jquery.tagsinput.min.js"></script>
+<link rel="stylesheet" href="/my_style/editor/css/jquery.tagsinput.min.css" />
+<script src="/my_style/editor/js/jquery.tagsinput.min.js"></script>
 {{--<link rel="stylesheet" href="https://pandao.github.io/editor.md/lib/codemirror/codemirror.min.css" />--}}
-<link rel="stylesheet" href="//laravel.suhanyu.top/plugin/editor.md/css/editormd.min.css" />
+<link rel="stylesheet" href="/plugin/editor.md/css/editormd.min.css" />
 <div class="container">
     <h3> 撰写新文章 </h3>
     <div class="row" style="margin-top:50px;">
@@ -57,8 +57,8 @@
         autocomplete:{selectFirst:true,width:'100px',autoFill:true}
     });
 </script>
-<script src="//laravel.suhanyu.top/plugin/editor.md/lib/marked.min.js"></script>
-<script src="//laravel.suhanyu.top/plugin/editor.md/editormd.js"></script>
+<script src="/plugin/editor.md/lib/marked.min.js"></script>
+<script src="/plugin/editor.md/editormd.js"></script>
 <script type="text/javascript">
     function iFrameHeight() {
         var ifm= document.getElementById("iframepage");

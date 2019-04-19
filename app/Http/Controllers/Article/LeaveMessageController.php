@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Article;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\Article\LeaveMessageModel;
+use Illuminate\Http\Request;
 
 class LeaveMessageController extends Controller
 {
@@ -15,12 +13,18 @@ class LeaveMessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $page = (int)$request->get('p');
+        $page = empty($page) ? 1 : (int)$page;
+        $offset = ($page - 1) * 10;
         // 留言的展示
-        $list = LeaveMessageModel::take(10)->orderBy('id', 'desc')->get();
+        $list = LeaveMessageModel::skip($offset)->take(10)->orderBy('id', 'desc')->get();
 
-        return view('articles.message',['dataList' => $list]);
+        return view('articles.message',[
+            'dataList' => $list,
+            'page'=>$page,
+        ]);
     }
 
     /**
@@ -43,7 +47,8 @@ class LeaveMessageController extends Controller
     {
         $input = $request->all();
         if (!$input['username'] || !$input['email'] || !$input['message']) {
-            echo '请用正确的姿势留言!';exit('下午8:40');
+            echo '请用正确的姿势留言!';
+            return;
         }
         $res = \App\Model\Article\LeaveMessageModel::create($input);
         if($res){

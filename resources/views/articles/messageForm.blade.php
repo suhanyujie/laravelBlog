@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="form-group">
-                {!! Form::submit('提交留言(submit)',['class'=>'btn btn-default']) !!}
+                {!! Form::submit('提交',['class'=>'btn btn-default']) !!}
             </div>
 
             {!! Form::close() !!}
@@ -36,15 +36,15 @@
         <!-- markedown来源 :http://www.codingdrama.com/bootstrap-markdown/  -->
         <hr>
         <div class="row">
-            <iframe id="iframepage" class="row" frameborder="0" width="100%" height="100%" scrolling=no onLoad="iFrameHeight()" src="/articles/message" frameborder="0"></iframe>
+            <iframe id="iframepage" class="row" frameborder="0" width="100%" height="100%" scrolling=no onLoad="iFrameHeight()" src="/articles/message/list" frameborder="0"></iframe>
         </div>
         
     </div>
 
     <script type="text/javascript" src="http://icon.zol-img.com.cn/public/js/jquery-1.11.min.js"></script>
     {{--<script src="/plugin/editormd/editormd.min.js"></script>--}}
-    <script src="http://zwiki.zol.com.cn/js/editor.md/lib/marked.min.js"></script>
-    <script src="http://zwiki.zol.com.cn/js/editor.md/editormd.js"></script>
+    <script src="/plugin/editor.md/lib/marked.min.js"></script>
+    <script src="/plugin/editor.md/editormd.js"></script>
     <script type="text/javascript">
         function iFrameHeight() {
             var ifm= document.getElementById("iframepage");
@@ -94,7 +94,6 @@
                         "goto-line", "watch", "preview", "fullscreen", "clear", "search", "|",
                         "help", "|", "publish",'exitEdit'
                     ]
-
                 },
                 toolbarIconsClass : {
                     tmplApi : "fa-paper-plane",
@@ -154,8 +153,6 @@
                 onload : function() {
                     setLinkTarget();
                 }
-
-
             });
 
             //ctrl+s保存
