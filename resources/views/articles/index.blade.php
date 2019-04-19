@@ -154,6 +154,7 @@
 				<a href="https://www.ctolib.com/" class="label label-info">综合-[码库CTOLib.COM]</a>
 				<a href="https://os.phil-opp.com/" class="label label-info">Rust-[Writing an OS in Rust]</a>
 				<a href="http://tinylab.org/projects/" class="label label-info">linux-[泰晓科技-官博]</a>
+				<a href="http://www.dnsou.com/" class="label label-info">综合-[等你搜-教程搜索]</a>
     		</div>
     	</div>
 		
