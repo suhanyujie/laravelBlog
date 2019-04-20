@@ -87,7 +87,7 @@
         }
         zEditor = editormd("text", {
             width   : '100%',
-            height      : 340,
+            height  : 340,
             float   : 'left',
             syncScrolling : "single",
             path    : "/plugin/editor.md/lib/",
@@ -95,7 +95,8 @@
             emoji : false,
             imageUpload : true,
             imageFormats : ["jpg", "jpeg", "gif", "png"],
-            //imageUploadURL : "/mdimage-upload.php",
+            imageUploadURL : "/upfile",
+            uploadCallbackURL:"/plugin/editor.md/examples/php/upload_callback.html",
             //tocStartLevel : 2,
             tocDropdown   : true,
             toolbarIcons : function() {
@@ -202,6 +203,9 @@
                     }
                     // this.result得到图片的base64 (可以用作即时显示)
                     $.post('/upfile',postData,function(data){
+                        if (data.status != 1) {
+                            alert('图片上传失败！'+status.message);
+                        }
                         if(data.linkurl){
                             zEditor.insertValue('![]('+data.linkurl+')');
                         }

@@ -18,7 +18,8 @@ Route::get('/test-sql', function() {
 
 Route::get('/','ArticlesController@index');
 //Route::get('/about','SitesController@about');
-Route::post('/upfile','SitesController@about');
+// 图片上传
+Route::post('/upfile','SitesController@upload');
 //Route::get('/contact','SitesController@contact');
 
 //Route::get('admin', function () {

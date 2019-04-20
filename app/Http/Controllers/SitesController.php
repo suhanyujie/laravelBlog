@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Input;
-
 use \Libs;
+use App\MyBlog\Services\Common\FileService;
 
 class SitesController extends Controller
 {
@@ -22,11 +22,41 @@ class SitesController extends Controller
 
         echo 'This is SitesCroller~';
     }
+
+    /**
+     * 图片上传 /upfile
+     * [
+     *      status=>1,
+     *      linkurl=>'',
+     * ]
+     *
+     * @param Request $request
+     * @return array
+     */
+    public function upload(Request $request)
+    {
+        $file = $request->file('file');
+        if (empty($file)) {
+            $fileArr = $request->file();
+            $file = array_pop($fileArr);
+        }
+        $fService = new FileService();
+        $result = $fService->uploadFile([
+            'file'=>$file,
+        ]);
+        if ($result['status'] == 1) {
+            $result['success'] = 1;
+            $request['url'] = $result['linkurl'];
+        }
+
+        return $result;
+    }
+
     /**
      * 测试用的about方法
      * 目前用于将图片上传至贴图库 suhy 20160623
      */
-    public function about(Request $request){
+    public function aboutOld1(Request $request){
         // 处理 文件上传
         if(!defined('MY_ACCESSKEY')){ //获取地址:http://open.tietuku.cn/manager
             define('MY_ACCESSKEY', 'be2464de338b26a0d278f638b671e54065897f2e');

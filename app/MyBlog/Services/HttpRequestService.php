@@ -44,6 +44,10 @@ class HttpRequestService
                     $options['addHeaderArr'][] = "Content-type:application/json";
                     $curlOpt[CURLOPT_POSTFIELDS] = json_encode($options['postData'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                     break;
+                case 21:
+                    $options['addHeaderArr'][] = "Content-type:multipart/form-data;";
+                    $curlOpt[CURLOPT_POSTFIELDS] = $options['postData'];
+                    break;
                 case 1:// 表单提交
                 default:
                     $options['addHeaderArr'][] = "Content-Type: application/x-www-form-urlencoded";

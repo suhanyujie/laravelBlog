@@ -74,7 +74,8 @@
                     emoji : false,
                     imageUpload : true,
                     imageFormats : ["jpg", "jpeg", "gif", "png"],
-                    //imageUploadURL : "/mdimage-upload.php",
+                    imageUploadURL : "/upfile",
+                    uploadCallbackURL:"/plugin/editor.md/examples/php/upload_callback.html",
                     //tocStartLevel : 2,
                     tocDropdown   : true,
                     toolbarIcons : function() {
