@@ -156,6 +156,7 @@
 				<a href="http://tinylab.org/projects/" class="label label-info">linux-[泰晓科技-官博]</a>
 				<a href="http://www.dnsou.com/" class="label label-info">综合-[等你搜-教程搜索]</a>
 				<a href="https://blog.csdn.net/wizardforcel" class="label label-info">机器学习-[飞龙csdn博客]</a>
+				<a href="http://www.php20.cn/" class="label label-info">PHP-[仙士可博客]</a>
     		</div>
     	</div>
 		
