@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Cache;
-use MyBlog\Repositories\ArticleRepository;
+use App;
 use App\Article;
 use App\Content;
-use Carbon\Carbon;
+use App\Http\Requests;
 use App\Model;
-use App;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use MyBlog\Services\ArticleServices;
 use MyBlog\Services\PageService;
-use Predis\Client;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class ArticlesController extends Controller
 {
@@ -269,11 +263,12 @@ class ArticlesController extends Controller
                 return view('articles.search', compact('searchList'));
             }
         } else {
-            $searchList[0]['message'] = '请输入要查询的关键词~';
-            return;
+            $searchList[0]['message'] = '请重新输入要查询的关键词~';
         }
 
-        return view('articles.search', compact('searchList'));
+        return view('articles.search', [
+            'searchList' => $searchList,
+        ]);
     }
 
     public function test1()

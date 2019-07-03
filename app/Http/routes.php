@@ -26,9 +26,11 @@ Route::post('/upfile','SitesController@upload');
 //	return view('admin_template');
 //});
 
+
+// 搜索路由
+Route::get('/articles/search','ArticlesController@search');
 // 数据备份路由
 Route::get('/articles/backup','ArticlesController@backup');
-
 Route::get('/articles/create','ArticlesController@create');
 Route::get('/articles/{id}','ArticlesController@show');
 Route::post('/articles','ArticlesController@store');
@@ -36,8 +38,6 @@ Route::get('/articles/{id}/edit','ArticlesController@edit');
 Route::get('/articles','ArticlesController@index');
 
 
-// 搜索路由
-Route::get('/articles/search','ArticlesController@search');
 // 标签列表页
 Route::get('/articles/tag/{id}','ArticlesController@tagList');
 // 留言路由
