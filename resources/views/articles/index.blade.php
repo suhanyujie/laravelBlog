@@ -159,6 +159,7 @@
 				<a href="http://www.php20.cn/" class="label label-info">PHP-[仙士可博客]</a>
 				<a href="https://www.codemore.top/" class="label label-info">综合-[代码拾遗]</a>
 				<a href="http://songtianyi.info/" class="label label-info">综合-[songtianyi's blog]</a>
+				<a href="https://www.javaboy.org/" class="label label-info">Java-[javaboy's blog]</a>
     		</div>
     	</div>
 		
