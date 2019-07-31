@@ -4,8 +4,8 @@
     @yield('title')
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="keywords" content="亡命之徒|寻觅|苏汉宇|850099803" />
-    <meta name="description" content="苏汉宇个人博客，是记录博主学习和成长,结束交流的一个自媒体博客。关注于web后端技术(PHP)和服务端编程的学习研究,同时喜欢前端工程化,喜欢Node,Vue,webPack等等..！" />
+    <meta name="keywords" content="亡命之徒|寻觅|个人博客" />
+    <meta name="description" content="亡命之徒|寻觅个人博客，是记录博主学习和成长,结束交流的一个自媒体博客。关注于web后端技术(PHP)和服务端编程的学习研究,同时喜欢前端工程化，爱好 PHP、Golang、Rust 等等..！" />
     <meta name="baidu-site-verification" content="B29FDA674B" />
     <meta http-equiv="Cache-Control" content="no-transform " />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
