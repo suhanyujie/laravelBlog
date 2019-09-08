@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\Email;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Console\Commands\MysqlBackup;
@@ -17,6 +18,7 @@ class Kernel extends ConsoleKernel
         Commands\Inspire::class,
         Commands\UpdateArticleSearchIndex::class,
         MysqlBackup::class,
+        Email::class,
     ];
 
     /**
