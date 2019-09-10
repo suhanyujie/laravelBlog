@@ -39,6 +39,7 @@ class Email extends Command
     public function handle()
     {
         $mail = new EmailService();
-        $mail->sendEmail();
+//        $mail->sendEmail();
+        $mail->addSub();
     }
 }
