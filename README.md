@@ -1,4 +1,5 @@
 # MyBlog
+* 个人博客 —— 爱生活，锲而不舍
 
 ## 环境
 * linux的centos环境
@@ -13,7 +14,6 @@
 
 #### vue相关前端
 * https://laravel-mix.com/docs/2.1/workflow
-
 
 ## 日志
 * 引入谷歌的recaptcha，用于判断用户是否是机器人   20190419
